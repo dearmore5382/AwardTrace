@@ -46,7 +46,7 @@ genvm-lint typecheck contracts\AwardTrace.py
 npm run build
 ```
 
-The current verified local result is 14 passing Python tests plus a successful production frontend build. Live StudioNet lifecycle evidence remains pending until the owner deploys the exact reviewed source with the primary wallet.
+The current verified local result is 15 passing Python tests plus a successful production frontend build. Live StudioNet lifecycle evidence remains pending until the owner deploys the exact reviewed source with the primary wallet.
 
 ## Deploy and operate
 

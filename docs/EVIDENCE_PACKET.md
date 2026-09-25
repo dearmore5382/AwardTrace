@@ -5,7 +5,7 @@ This file is intentionally honest about what exists now and what must be capture
 ## Verified now
 
 - Contract source: `contracts/AwardTrace.py`
-- Direct/static test suite: 14 passing tests
+- Direct/static test suite: 15 passing tests
 - GenVM source checks: compile, lint, and typecheck pass
 - Frontend: production build passes and imports `genlayer-js`
 - Source adapter: fixed Contracts Finder single-release origin; no arbitrary positive-evidence URL
@@ -15,7 +15,8 @@ This file is intentionally honest about what exists now and what must be capture
 
 | Evidence | Required value |
 |---|---|
-| Contract address | `PENDING_PRIMARY_WALLET_DEPLOYMENT` |
+| Superseded contract | `0xD9879234feCD421740896028adE31f42f5f2120A` — source parity passed, but live `anchor_criteria` reached `CONSENSUS_FAILED`; do not submit as successful deployment |
+| Replacement contract | `PENDING_PRIMARY_WALLET_REDEPLOYMENT` |
 | Source commit | `PENDING_GIT_COMMIT` |
 | Deploy transaction | `PENDING` |
 | Wallet A happy-path transactions | `PENDING` |

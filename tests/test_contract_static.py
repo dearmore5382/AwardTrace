@@ -31,3 +31,9 @@ def test_no_money_or_direct_ai_verdict_surface():
     assert "gl.nondet.exec_prompt" in SOURCE
     assert "def _derive" in SOURCE
 
+
+def test_criteria_are_deterministic_and_trace_is_audited():
+    assert "def _criteria_from_release" in SOURCE
+    assert "Audit whether this proposed criterion trace" in SOURCE
+    assert "independent = leader()" not in SOURCE
+

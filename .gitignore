@@ -47,3 +47,4 @@ next-env.d.ts
 /outputs/
 /work/
 awardtrace-sites.tar.gz
+/.private/

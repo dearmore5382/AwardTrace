@@ -1,0 +1,54 @@
+{
+  "contract": "0xD9879234feCD421740896028adE31f42f5f2120A",
+  "network": "StudioNet",
+  "source_sha256": "6fff46cf950ae5a33a0a2493664ddb02ff1653d45ed9ae700524452e2e7da4ec",
+  "started_at": "2026-09-25T03:00:52.472972+00:00",
+  "wallets": [
+    "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+    "0xA63DE24e30C88FB1019E8956654730316e36eDBE"
+  ],
+  "start_count": 0,
+  "watch_id": "0",
+  "steps": [
+    {
+      "id": "F1-invalid-watch",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "create_watch",
+      "hash": "0x2f772892b2734006c9f862128aacf1920b85168b05b683d2fd9baeb4e8e86992",
+      "return": "INVALID_WATCH",
+      "state_after": "NOT_CREATED",
+      "status": "READBACK_VERIFIED"
+    },
+    {
+      "id": "H1-create-watch",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "create_watch",
+      "hash": "0xb621eb7cb6352a79fd595e5ab2b6981a1961360b49bca6b40f3a42c864f7fa32",
+      "return": "0",
+      "state_after": "{\"award_release_id\": \"\", \"award_sha256\": \"\", \"criteria\": [], \"criteria_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"criteria_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a\", \"current_revision\": \"\", \"ocid\": \"ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0\", \"owner\": \"0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB\", \"revision_count\": 0, \"status\": \"MONITORING\", \"watch_id\": \"0\"}",
+      "status": "READBACK_VERIFIED"
+    },
+    {
+      "id": "A1-auditor-anchor",
+      "actor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+      "method": "anchor_criteria",
+      "hash": "0x2e6ce71070add0dbb5514f04efdec8d3fc5b17d12cd0746a80c3bdb87d1df56c",
+      "return": "OWNER_ONLY",
+      "state_after": "{\"award_release_id\": \"\", \"award_sha256\": \"\", \"criteria\": [], \"criteria_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"criteria_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a\", \"current_revision\": \"\", \"ocid\": \"ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0\", \"owner\": \"0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB\", \"revision_count\": 0, \"status\": \"MONITORING\", \"watch_id\": \"0\"}",
+      "status": "READBACK_VERIFIED"
+    },
+    {
+      "id": "F2-premature-assess",
+      "actor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+      "method": "assess_award",
+      "hash": "0x5ab76210002a6d3f96e6c3959578db6de384016b5f01fa3631b0948fe218b006",
+      "return": "AWARD_NOT_ASSESSABLE",
+      "state_after": "{\"award_release_id\": \"\", \"award_sha256\": \"\", \"criteria\": [], \"criteria_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"criteria_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a\", \"current_revision\": \"\", \"ocid\": \"ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0\", \"owner\": \"0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB\", \"revision_count\": 0, \"status\": \"MONITORING\", \"watch_id\": \"0\"}",
+      "status": "READBACK_VERIFIED"
+    }
+  ],
+  "complete": false,
+  "stopped_at": "H2-anchor-criteria",
+  "failure": "CONSENSUS_FAILED",
+  "disposition": "Deployment superseded. The release had no explicit award-criteria array and the original validator required independently generated AI text to match exactly. No later lifecycle success is claimed."
+}
