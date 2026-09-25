@@ -1,0 +1,14 @@
+{
+  "classification": "official-point-in-time-observation",
+  "authority": "UK Cabinet Office Contracts Finder",
+  "observed_at": "2026-09-25",
+  "ocid": "ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0",
+  "release_id": "a55ff105-de10-4260-b843-e16e40642436",
+  "url": "https://www.contractsfinder.service.gov.uk/Published/Notice/releases/a55ff105-de10-4260-b843-e16e40642436.json",
+  "http_status": 200,
+  "content_type": "application/json",
+  "raw_byte_length": 8491,
+  "raw_sha256": "88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a",
+  "immutability_claim": false,
+  "positive_mutation_rule": "fresh bytes must match this digest and the expected OCID"
+}
