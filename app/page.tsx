@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect,useMemo,useState } from "react";
+import { useMemo,useState } from "react";
 import { createClient } from "genlayer-js";
 import { studionet } from "genlayer-js/chains";
 import { TransactionStatus } from "genlayer-js/types";
@@ -15,7 +15,6 @@ const OCID="ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0", RELEASE="a55ff105
 export default function Home(){
  const [account,setAccount]=useState(""),[contract,setContract]=useState(""),[watchId,setWatchId]=useState("0"),[busy,setBusy]=useState("");
  const [watch,setWatch]=useState<Watch|null>(null),[revision,setRevision]=useState<Record<string,unknown>|null>(null),[journal,setJournal]=useState<Array<{label:string;hash:string}>>([]);
- useEffect(()=>setContract(localStorage.getItem("awardtrace.contract")||""),[]);
  const valid=/^0x[0-9a-fA-F]{40}$/.test(contract), readClient=useMemo(()=>createClient({chain:studionet}),[]);
  async function connect(){if(!window.ethereum)return toast.error("No injected wallet found.");try{const accounts=await(window.ethereum as {request:(x:{method:string})=>Promise<string[]>}).request({method:"eth_requestAccounts"});const selected=accounts[0];const client=createClient({chain:studionet,account:selected as `0x${string}`,provider:window.ethereum});await client.connect("studionet");setAccount(selected);toast.success("Wallet connected to StudioNet")}catch(e){toast.error(e instanceof Error?e.message:"Wallet connection cancelled")}}
  function saveContract(v:string){v=v.trim();setContract(v);localStorage.setItem("awardtrace.contract",v);setWatch(null);setRevision(null)}
