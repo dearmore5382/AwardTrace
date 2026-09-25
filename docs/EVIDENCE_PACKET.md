@@ -37,12 +37,12 @@ The selected Contracts Finder OCID currently exposes one release URL. Its public
 | Superseded contract | `0x38a69DefF9612b88F1D0E01C50A0Ea410c17687d` — source parity, anchor and award binding passed; schema-only custom validators still failed assessment consensus and did not meet the semantic proof obligation; do not submit as complete |
 | Superseded contract | `0x4179B6864E930b609409dD9cD678F2c1d9441a56` — semantic consensus reached `MAJORITY_AGREE`, but execution returned `INVALID_TRACE_SCHEMA` because structured JSON was object-wrapped; no revision was created |
 | Replacement contract | `0x3587E5d4cc060718a4b7E4b2aA77A6AcC7f44aC1` |
-| Source commit | `PENDING_GIT_COMMIT` |
+| Source commit | `e709236` — verified contract and E2E evidence publication |
 | Deploy transaction | `PENDING` |
 | Wallet A happy-path transactions | Recorded in both verification journals |
 | Wallet B assessment transaction | `0x002cb9c3393d365c8303a65340e7d830e6693473c62c3dfc049bd2c4ad8c133c` |
 | Failure/adversarial transactions | Recorded in both verification journals |
 | Finalized authoritative readback | Watches `0` and `3` frozen; journals contain per-step readback |
-| Live frontend URL | `PENDING_PUBLICATION` |
+| Live frontend URL | `https://awardtrace.pages.dev` — HTTP 200 and verified contract address embedded in the production build |
 
 Do not replace a pending field with a transaction that only finalized transport. Confirm method return and state readback first. Do not claim test fixtures as live source evidence.

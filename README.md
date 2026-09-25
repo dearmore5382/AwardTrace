@@ -46,7 +46,7 @@ genvm-lint typecheck contracts\AwardTrace.py
 npm run build
 ```
 
-The current verified local result is 15 passing Python tests plus a successful production frontend build. Live StudioNet lifecycle evidence remains pending until the owner deploys the exact reviewed source with the primary wallet.
+The current verified result is 18 passing Python tests, a successful static production build, and two finalized StudioNet journals with authoritative readback.
 
 ## Deploy and operate
 
@@ -62,3 +62,5 @@ See [`docs/VERIFICATION_GUIDE.md`](docs/VERIFICATION_GUIDE.md), [`docs/TEST_RESO
 ## Current deployment truth
 
 The verified StudioNet deployment is `0x3587E5d4cc060718a4b7E4b2aA77A6AcC7f44aC1`. The frontend defaults to public evidence watch `3`; users may still enter another deployment or watch. The submitted evidence journals contain only finalized transactions with authoritative post-transaction readback.
+
+Live frontend: https://awardtrace.pages.dev
