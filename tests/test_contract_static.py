@@ -35,5 +35,6 @@ def test_no_money_or_direct_ai_verdict_surface():
 def test_criteria_are_deterministic_and_trace_is_audited():
     assert "def _criteria_from_release" in SOURCE
     assert "independent = leader()" not in SOURCE
-    assert '_parse_trace(proposed.get("trace"), criteria)' in SOURCE
+    assert "prompt_non_comparative" in SOURCE
+    assert 'response_format="json"' in SOURCE
 

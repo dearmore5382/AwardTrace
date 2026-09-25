@@ -131,6 +131,7 @@ def main():
     for item in plan:
         hash_value = str(clients[item["actor"].lower()].write_contract(address=ADDRESS,
                          function_name=item["method"], args=item["args"], value=0, leader_only=False))
+        print(json.dumps({"id": item["id"], "hash": hash_value, "status": "SUBMITTED"}), flush=True)
         deadline = time.monotonic() + 1200
         while time.monotonic() < deadline:
             tx = rpc("eth_getTransactionByHash", [hash_value])
