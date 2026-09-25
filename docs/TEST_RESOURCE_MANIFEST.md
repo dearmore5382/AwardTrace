@@ -14,8 +14,11 @@
 | Observed raw length | `8491` bytes |
 | Observed SHA-256 | `88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a` |
 | Observation date | `2026-09-25` |
+| OCDS release tag | `award` |
 
 This is a point-in-time observation, not an assertion that the endpoint is immutable. The contract re-fetches the derived URL and requires exact raw-byte digest and OCID agreement before positive mutation. If the authority changes the representation, the old digest fails closed.
+
+This sample is suitable for demonstrating official-source binding, parser behavior, assessment, and readback. Because it is already tagged `award`, it is **not** evidence of a real prospective pre-award anchor. A submission claiming the prospective property must use an earlier tender release and a later award release for the same OCID, with both raw digests recorded.
 
 ## Fixture classification
 
