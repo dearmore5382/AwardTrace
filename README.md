@@ -57,7 +57,7 @@ The current verified result is 18 passing Python tests, a successful static prod
 5. Reconnect test wallet A for correction/freeze operations.
 6. Add only real Explorer URLs and transaction hashes to the evidence packet.
 
-See [`docs/VERIFICATION_GUIDE.md`](docs/VERIFICATION_GUIDE.md), [`docs/TEST_RESOURCE_MANIFEST.md`](docs/TEST_RESOURCE_MANIFEST.md), and [`docs/EVIDENCE_PACKET.md`](docs/EVIDENCE_PACKET.md).
+See [`docs/VERIFICATION_GUIDE.md`](docs/VERIFICATION_GUIDE.md), [`docs/TEST_RESOURCE_MANIFEST.md`](docs/TEST_RESOURCE_MANIFEST.md), [`docs/EVIDENCE_PACKET.md`](docs/EVIDENCE_PACKET.md), and the clickable [`verification/LIVE_RESULTS.md`](verification/LIVE_RESULTS.md) on-chain transaction index.
 
 ## Current deployment truth
 

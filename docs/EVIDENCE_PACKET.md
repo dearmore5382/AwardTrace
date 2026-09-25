@@ -17,6 +17,7 @@ This file distinguishes completed StudioNet evidence from claims the current pub
 - Deployed source SHA-256: `cfb26686b4802d3874b18e021d23e8cf05deb26f7a9a8c75e64618fd8293c1dd`
 - Base lifecycle journal: `verification/live-0x3587e5d4cc060718a4b7e4b2aa77a6acc7f44ac1.json` (`10/10` readback verified)
 - Extended journal: `verification/extended-0x3587e5d4cc060718a4b7e4b2aa77a6acc7f44ac1.json` (`10/10` readback verified)
+- Clickable live transaction index: [`verification/LIVE_RESULTS.md`](../verification/LIVE_RESULTS.md)
 - Happy path: create, anchor, bind, independent auditor assessment, freeze.
 - Integrity failure: transaction `0x211da5bf0059fb03096577a2068b5d9a3ee48401fea1985e5ecdbc9a929efcbc` returned `INTEGRITY_FAILURE`; watch `1` remained `MONITORING`.
 - Identity failure: transaction `0x0e3388e25c945d1ebea1e9334c8f527a7a2e3c042d595b194d63b5de42201982` returned `IDENTITY_FAILURE`; watch `2` remained `MONITORING`.
