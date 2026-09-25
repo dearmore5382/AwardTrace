@@ -16,6 +16,7 @@ This file is intentionally honest about what exists now and what must be capture
 | Evidence | Required value |
 |---|---|
 | Superseded contract | `0xD9879234feCD421740896028adE31f42f5f2120A` — source parity passed, but live `anchor_criteria` reached `CONSENSUS_FAILED`; do not submit as successful deployment |
+| Superseded contract | `0x513718Aa8600AC79dA3d5809341C8Def3cf6D025` — source parity, anchor and award binding passed; AI assessment reached `CONSENSUS_FAILED` because validators independently invoked AI; do not submit as complete |
 | Replacement contract | `PENDING_PRIMARY_WALLET_REDEPLOYMENT` |
 | Source commit | `PENDING_GIT_COMMIT` |
 | Deploy transaction | `PENDING` |
