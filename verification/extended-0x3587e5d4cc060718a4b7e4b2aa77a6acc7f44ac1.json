@@ -1,0 +1,201 @@
+{
+  "contract": "0x3587E5d4cc060718a4b7E4b2aA77A6AcC7f44aC1",
+  "network": "StudioNet",
+  "source_sha256": "cfb26686b4802d3874b18e021d23e8cf05deb26f7a9a8c75e64618fd8293c1dd",
+  "official_source": {
+    "ocid": "ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0",
+    "release": "a55ff105-de10-4260-b843-e16e40642436",
+    "sha256": "88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a"
+  },
+  "started_at": "2026-09-25T04:14:58.201640+00:00",
+  "steps": [
+    {
+      "id": "D1-create-wrong-digest",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "create_watch",
+      "hash": "0x9f0495e9c33b5dfc6907cdcaa7a1c7aa176002c7a53e55d8de75966b94390c22",
+      "return": "1",
+      "state_after": "{\"award_release_id\": \"\", \"award_sha256\": \"\", \"criteria\": [], \"criteria_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"criteria_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f2780\", \"current_revision\": \"\", \"ocid\": \"ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0\", \"owner\": \"0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB\", \"revision_count\": 0, \"status\": \"MONITORING\", \"watch_id\": \"1\"}",
+      "status": "READBACK_VERIFIED"
+    },
+    {
+      "id": "D2-anchor-wrong-digest",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "anchor_criteria",
+      "hash": "0x211da5bf0059fb03096577a2068b5d9a3ee48401fea1985e5ecdbc9a929efcbc",
+      "return": "INTEGRITY_FAILURE",
+      "state_after": "{\"award_release_id\": \"\", \"award_sha256\": \"\", \"criteria\": [], \"criteria_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"criteria_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f2780\", \"current_revision\": \"\", \"ocid\": \"ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0\", \"owner\": \"0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB\", \"revision_count\": 0, \"status\": \"MONITORING\", \"watch_id\": \"1\"}",
+      "status": "READBACK_VERIFIED"
+    },
+    {
+      "id": "I1-create-wrong-identity",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "create_watch",
+      "hash": "0xd46d8525e1f7aa27f6ad4511095f81ecf0271e6e761421d361fe6839e4cf7fdc",
+      "return": "2",
+      "state_after": "{\"award_release_id\": \"\", \"award_sha256\": \"\", \"criteria\": [], \"criteria_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"criteria_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a\", \"current_revision\": \"\", \"ocid\": \"ocds-b5fd17-00000000-0000-4000-8000-000000000000\", \"owner\": \"0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB\", \"revision_count\": 0, \"status\": \"MONITORING\", \"watch_id\": \"2\"}",
+      "status": "READBACK_VERIFIED"
+    },
+    {
+      "id": "I2-anchor-wrong-identity",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "anchor_criteria",
+      "hash": "0x0e3388e25c945d1ebea1e9334c8f527a7a2e3c042d595b194d63b5de42201982",
+      "return": "IDENTITY_FAILURE",
+      "state_after": "{\"award_release_id\": \"\", \"award_sha256\": \"\", \"criteria\": [], \"criteria_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"criteria_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a\", \"current_revision\": \"\", \"ocid\": \"ocds-b5fd17-00000000-0000-4000-8000-000000000000\", \"owner\": \"0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB\", \"revision_count\": 0, \"status\": \"MONITORING\", \"watch_id\": \"2\"}",
+      "status": "READBACK_VERIFIED"
+    },
+    {
+      "id": "R1-create",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "create_watch",
+      "hash": "0x0c758523b00f9a0a3dec2af009f662f2711b3ccf89e57a49f52f8880b947aee6",
+      "return": "3",
+      "state_after": "{\"award_release_id\": \"\", \"award_sha256\": \"\", \"criteria\": [], \"criteria_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"criteria_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a\", \"current_revision\": \"\", \"ocid\": \"ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0\", \"owner\": \"0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB\", \"revision_count\": 0, \"status\": \"MONITORING\", \"watch_id\": \"3\"}",
+      "status": "READBACK_VERIFIED"
+    },
+    {
+      "id": "R2-anchor",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "anchor_criteria",
+      "hash": "0x13a42cfb8c9c36bf16ebe5a8ae67e87a0d70a61b4594f3211c922d39c0bda649",
+      "return": "CRITERIA_ANCHORED",
+      "state_after": "{\"award_release_id\": \"\", \"award_sha256\": \"\", \"criteria\": [{\"criterion_id\": \"C1\", \"text\": \"Janitorial, Waste Removal and Pest Control - BGIS invites qualified parties to submit proposals for the provision of Janitorial, Pest Control, and Waste Services.\", \"weight_band\": \"UNSPECIFIED\"}, {\"criterion_id\": \"C2\", \"text\": \"Janitorial services; Waste and rubbish containers and bins; Pest-control services\", \"weight_band\": \"UNSPECIFIED\"}, {\"criterion_id\": \"C3\", \"text\": \"Contract period: 2026-07-01T00:00:00+01:00 to 2029-04-30T23:59:59+01:00\", \"weight_band\": \"UNSPECIFIED\"}], \"criteria_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"criteria_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a\", \"current_revision\": \"\", \"ocid\": \"ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0\", \"owner\": \"0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB\", \"revision_count\": 0, \"status\": \"CRITERIA_ANCHORED\", \"watch_id\": \"3\"}",
+      "status": "READBACK_VERIFIED"
+    },
+    {
+      "id": "R3-bind",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "bind_award",
+      "hash": "0x420490687f932f23cc2c2d2d961e4d6b932b7902e87e350c0e421525895a6755",
+      "return": "AWARD_BOUND",
+      "state_after": "{\"award_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"award_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a\", \"criteria\": [{\"criterion_id\": \"C1\", \"text\": \"Janitorial, Waste Removal and Pest Control - BGIS invites qualified parties to submit proposals for the provision of Janitorial, Pest Control, and Waste Services.\", \"weight_band\": \"UNSPECIFIED\"}, {\"criterion_id\": \"C2\", \"text\": \"Janitorial services; Waste and rubbish containers and bins; Pest-control services\", \"weight_band\": \"UNSPECIFIED\"}, {\"criterion_id\": \"C3\", \"text\": \"Contract period: 2026-07-01T00:00:00+01:00 to 2029-04-30T23:59:59+01:00\", \"weight_band\": \"UNSPECIFIED\"}], \"criteria_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"criteria_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a\", \"current_revision\": \"\", \"ocid\": \"ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0\", \"owner\": \"0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB\", \"revision_count\": 0, \"status\": \"AWARD_BOUND\", \"watch_id\": \"3\"}",
+      "status": "READBACK_VERIFIED"
+    },
+    {
+      "id": "R4-auditor-assess",
+      "actor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+      "method": "assess_award",
+      "hash": "0xd0320b3f1a39af642d417ffee4991e22168934b1f2706077064e54c2cee98097",
+      "return": "FULLY_TRACED",
+      "state_after": "{\"award_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"award_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a\", \"criteria\": [{\"criterion_id\": \"C1\", \"text\": \"Janitorial, Waste Removal and Pest Control - BGIS invites qualified parties to submit proposals for the provision of Janitorial, Pest Control, and Waste Services.\", \"weight_band\": \"UNSPECIFIED\"}, {\"criterion_id\": \"C2\", \"text\": \"Janitorial services; Waste and rubbish containers and bins; Pest-control services\", \"weight_band\": \"UNSPECIFIED\"}, {\"criterion_id\": \"C3\", \"text\": \"Contract period: 2026-07-01T00:00:00+01:00 to 2029-04-30T23:59:59+01:00\", \"weight_band\": \"UNSPECIFIED\"}], \"criteria_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"criteria_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a\", \"current_revision\": \"0\", \"ocid\": \"ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0\", \"owner\": \"0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB\", \"revision_count\": 1, \"status\": \"TRACE_OPEN\", \"watch_id\": \"3\"}",
+      "status": "READBACK_VERIFIED"
+    },
+    {
+      "id": "R5-append-authenticated-revision",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "append_correction",
+      "hash": "0x5e81699781e78fc7a4b3a64bccf6b8d62336e82eaae0617bf7c1733364e2a2a4",
+      "return": "FULLY_TRACED",
+      "state_after": "{\"award_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"award_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a\", \"criteria\": [{\"criterion_id\": \"C1\", \"text\": \"Janitorial, Waste Removal and Pest Control - BGIS invites qualified parties to submit proposals for the provision of Janitorial, Pest Control, and Waste Services.\", \"weight_band\": \"UNSPECIFIED\"}, {\"criterion_id\": \"C2\", \"text\": \"Janitorial services; Waste and rubbish containers and bins; Pest-control services\", \"weight_band\": \"UNSPECIFIED\"}, {\"criterion_id\": \"C3\", \"text\": \"Contract period: 2026-07-01T00:00:00+01:00 to 2029-04-30T23:59:59+01:00\", \"weight_band\": \"UNSPECIFIED\"}], \"criteria_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"criteria_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a\", \"current_revision\": \"1\", \"ocid\": \"ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0\", \"owner\": \"0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB\", \"revision_count\": 2, \"status\": \"TRACE_OPEN\", \"watch_id\": \"3\"}",
+      "status": "READBACK_VERIFIED"
+    },
+    {
+      "id": "R6-freeze",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "freeze_trace",
+      "hash": "0x686fb9ce97c4acea96283f238effa19b73f0168990df20f3e3d559907ca87239",
+      "return": "TRACE_FROZEN",
+      "state_after": "{\"award_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"award_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a\", \"criteria\": [{\"criterion_id\": \"C1\", \"text\": \"Janitorial, Waste Removal and Pest Control - BGIS invites qualified parties to submit proposals for the provision of Janitorial, Pest Control, and Waste Services.\", \"weight_band\": \"UNSPECIFIED\"}, {\"criterion_id\": \"C2\", \"text\": \"Janitorial services; Waste and rubbish containers and bins; Pest-control services\", \"weight_band\": \"UNSPECIFIED\"}, {\"criterion_id\": \"C3\", \"text\": \"Contract period: 2026-07-01T00:00:00+01:00 to 2029-04-30T23:59:59+01:00\", \"weight_band\": \"UNSPECIFIED\"}], \"criteria_release_id\": \"a55ff105-de10-4260-b843-e16e40642436\", \"criteria_sha256\": \"88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a\", \"current_revision\": \"1\", \"ocid\": \"ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0\", \"owner\": \"0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB\", \"revision_count\": 2, \"status\": \"FROZEN\", \"watch_id\": \"3\"}",
+      "status": "READBACK_VERIFIED"
+    }
+  ],
+  "complete": true,
+  "integrity_watch": "1",
+  "identity_watch": "2",
+  "revision_watch": "3",
+  "final_watch": {
+    "award_release_id": "a55ff105-de10-4260-b843-e16e40642436",
+    "award_sha256": "88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a",
+    "criteria": [
+      {
+        "criterion_id": "C1",
+        "text": "Janitorial, Waste Removal and Pest Control - BGIS invites qualified parties to submit proposals for the provision of Janitorial, Pest Control, and Waste Services.",
+        "weight_band": "UNSPECIFIED"
+      },
+      {
+        "criterion_id": "C2",
+        "text": "Janitorial services; Waste and rubbish containers and bins; Pest-control services",
+        "weight_band": "UNSPECIFIED"
+      },
+      {
+        "criterion_id": "C3",
+        "text": "Contract period: 2026-07-01T00:00:00+01:00 to 2029-04-30T23:59:59+01:00",
+        "weight_band": "UNSPECIFIED"
+      }
+    ],
+    "criteria_release_id": "a55ff105-de10-4260-b843-e16e40642436",
+    "criteria_sha256": "88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a",
+    "current_revision": "1",
+    "ocid": "ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0",
+    "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+    "revision_count": 2,
+    "status": "FROZEN",
+    "watch_id": "3"
+  },
+  "revision_zero": {
+    "parent": "",
+    "release_id": "a55ff105-de10-4260-b843-e16e40642436",
+    "revision": "0",
+    "sha256": "88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a",
+    "summary": "FULLY_TRACED",
+    "trace": [
+      {
+        "amendment_controls": false,
+        "award_reference": "releases[0]",
+        "criterion_id": "C1",
+        "identity_consistent": true,
+        "relation": "ADDRESSED"
+      },
+      {
+        "amendment_controls": false,
+        "award_reference": "releases[0]",
+        "criterion_id": "C2",
+        "identity_consistent": true,
+        "relation": "ADDRESSED"
+      },
+      {
+        "amendment_controls": false,
+        "award_reference": "releases[0]",
+        "criterion_id": "C3",
+        "identity_consistent": true,
+        "relation": "ADDRESSED"
+      }
+    ],
+    "watch_id": "3"
+  },
+  "revision_one": {
+    "parent": "0",
+    "release_id": "a55ff105-de10-4260-b843-e16e40642436",
+    "revision": "1",
+    "sha256": "88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a",
+    "summary": "FULLY_TRACED",
+    "trace": [
+      {
+        "amendment_controls": false,
+        "award_reference": "releases[0]",
+        "criterion_id": "C1",
+        "identity_consistent": true,
+        "relation": "ADDRESSED"
+      },
+      {
+        "amendment_controls": false,
+        "award_reference": "releases[0]",
+        "criterion_id": "C2",
+        "identity_consistent": true,
+        "relation": "ADDRESSED"
+      },
+      {
+        "amendment_controls": false,
+        "award_reference": "releases[0]",
+        "criterion_id": "C3",
+        "identity_consistent": true,
+        "relation": "ADDRESSED"
+      }
+    ],
+    "watch_id": "3"
+  },
+  "completed_at": "2026-09-25T04:23:11.675843+00:00",
+  "semantic_conflict_proven": false,
+  "semantic_conflict_note": "The official OCID exposes one current release URL; no independent same-OCID conflicting byte snapshot was available."
+}

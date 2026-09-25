@@ -24,7 +24,8 @@ Use the primary wallet only for deployment. Do not use it for the lifecycle belo
 - Source unavailable/oversized/invalid: must return `SOURCE_RETRYABLE`; state remains unchanged.
 - Wallet B attempts owner-only anchor/bind/correction/freeze: must return `OWNER_ONLY`.
 - Assess before award binding: must return `AWARD_NOT_ASSESSABLE`.
-- Duplicate or missing criterion, unknown relation, changed reference, or non-boolean control field: validators reject the nondeterministic result.
+- Wrong relation count, unknown relation, multiline output, or added model prose: validators reject the nondeterministic result.
+- Criterion IDs, the authenticated source locator, identity consistency, and explicit amendment-control flag are derived deterministically; the model cannot author them.
 - Freeze before an accepted trace: must return `TRACE_NOT_FREEZABLE`.
 
 Transaction finality alone is not success. Evidence is complete only after the return/result and authoritative contract state are read back and match the intended transition.

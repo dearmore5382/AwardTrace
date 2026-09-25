@@ -19,7 +19,7 @@ official award  -> exact-byte verification -> criterion trace -> revision chain 
 - Binding: OCID + release GUID + raw response SHA-256 + contract state.
 - Source outage: returns `SOURCE_RETRYABLE` and does not create positive state.
 - Digest or OCID mismatch: returns an explicit integrity/identity failure and does not create positive state.
-- AI output: schema-bound and independently re-executed by validators; the summary is derived deterministically from the accepted relation matrix.
+- AI output: one bounded pipe-delimited relation vector, independently re-executed by validators. Criterion IDs, source locator, identity flag, amendment flag, trace JSON, and summary are derived deterministically.
 - Synthetic fixtures: unit tests only, never represented as live authority.
 
 ## Roles
@@ -61,4 +61,4 @@ See [`docs/VERIFICATION_GUIDE.md`](docs/VERIFICATION_GUIDE.md), [`docs/TEST_RESO
 
 ## Current deployment truth
 
-No contract address is hard-coded. No live transaction hash is claimed. These fields must be filled only after user-controlled deployment and finalized StudioNet execution.
+The verified StudioNet deployment is `0x3587E5d4cc060718a4b7E4b2aA77A6AcC7f44aC1`. The frontend defaults to public evidence watch `3`; users may still enter another deployment or watch. The submitted evidence journals contain only finalized transactions with authoritative post-transaction readback.

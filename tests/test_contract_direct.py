@@ -129,6 +129,30 @@ def test_trace_parser_binds_every_consequential_field():
     assert parser({"trace": trace()}, locked) == parser(trace(), locked)
 
 
+def test_relation_line_is_bounded_and_ordered():
+    module = deploy()[1]._instance.create_watch.__globals__
+    parser = module["_parse_relation_line"]
+    locked = criteria()
+    assert parser("ADDRESSED|UNCLEAR", locked) == ["ADDRESSED", "UNCLEAR"]
+    for invalid in ("ADDRESSED", "ADDRESSED|YES", "ADDRESSED|UNCLEAR\nextra", {"trace": []}):
+        try:
+            parser(invalid, locked)
+            assert False, "invalid relation output must fail"
+        except Exception:
+            pass
+
+
+def test_trace_metadata_is_derived_not_model_authored():
+    module = deploy()[1]._instance.create_watch.__globals__
+    built = module["_trace_from_relations"](criteria(), ["ADDRESSED", "OMITTED"],
+                                             {"amendments": [{"id": "a1"}]})
+    assert [item["criterion_id"] for item in built] == ["C1", "C2"]
+    assert [item["relation"] for item in built] == ["ADDRESSED", "OMITTED"]
+    assert all(item["award_reference"] == "releases[0]" for item in built)
+    assert all(item["identity_consistent"] is True for item in built)
+    assert all(item["amendment_controls"] is True for item in built)
+
+
 def test_trace_parser_rejects_wrapper_key_injection():
     module = deploy()[1]._instance.create_watch.__globals__
     parser = module["_parse_trace"]

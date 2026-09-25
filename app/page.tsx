@@ -10,10 +10,10 @@ import { Tabs,TabsContent,TabsList,TabsTrigger } from "@/components/ui/tabs";
 import { Toaster } from "@/components/ui/sonner";
 declare global { interface Window { ethereum?: unknown } }
 type Watch={watch_id:string;owner:string;ocid:string;status:string;criteria_release_id:string;criteria_sha256:string;criteria:Array<{criterion_id:string;text:string;weight_band:string}>;award_release_id:string;award_sha256:string;revision_count:number;current_revision:string};
-const OCID="ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0", RELEASE="a55ff105-de10-4260-b843-e16e40642436", DIGEST="88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a", EXPLORER="https://explorer-studio.genlayer.com";
+const OCID="ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0", RELEASE="a55ff105-de10-4260-b843-e16e40642436", DIGEST="88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a", CONTRACT="0x3587E5d4cc060718a4b7E4b2aA77A6AcC7f44aC1", EXPLORER="https://explorer-studio.genlayer.com";
 
 export default function Home(){
- const [account,setAccount]=useState(""),[contract,setContract]=useState(""),[watchId,setWatchId]=useState("0"),[busy,setBusy]=useState("");
+ const [account,setAccount]=useState(""),[contract,setContract]=useState(CONTRACT),[watchId,setWatchId]=useState("3"),[busy,setBusy]=useState("");
  const [watch,setWatch]=useState<Watch|null>(null),[revision,setRevision]=useState<Record<string,unknown>|null>(null),[journal,setJournal]=useState<Array<{label:string;hash:string}>>([]);
  const valid=/^0x[0-9a-fA-F]{40}$/.test(contract), readClient=useMemo(()=>createClient({chain:studionet}),[]);
  async function connect(){if(!window.ethereum)return toast.error("No injected wallet found.");try{const accounts=await(window.ethereum as {request:(x:{method:string})=>Promise<string[]>}).request({method:"eth_requestAccounts"});const selected=accounts[0];const client=createClient({chain:studionet,account:selected as `0x${string}`,provider:window.ethereum});await client.connect("studionet");setAccount(selected);toast.success("Wallet connected to StudioNet")}catch(e){toast.error(e instanceof Error?e.message:"Wallet connection cancelled")}}
