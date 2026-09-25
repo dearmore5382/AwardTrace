@@ -126,6 +126,17 @@ def test_trace_parser_binds_every_consequential_field():
     changed = trace()
     changed[0]["amendment_controls"] = True
     assert parser(trace(), locked) != parser(changed, locked)
+    assert parser({"trace": trace()}, locked) == parser(trace(), locked)
+
+
+def test_trace_parser_rejects_wrapper_key_injection():
+    module = deploy()[1]._instance.create_watch.__globals__
+    parser = module["_parse_trace"]
+    try:
+        parser({"trace": trace(), "verdict": "FULLY_TRACED"}, criteria())
+        assert False, "wrapper key injection must fail"
+    except Exception:
+        pass
 
 
 def test_duplicate_and_wrong_state_guards():
