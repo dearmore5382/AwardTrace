@@ -1,5 +1,7 @@
 # AwardTrace live StudioNet E2E results
 
+> **Superseded evidence:** these transactions belong to the prior contract schema. They remain published for audit history, but they do not satisfy the reviewer request for distinct tender/award/correction releases, actual published evaluation criteria, or cited award-rationale passages. Do not submit them as v3 evidence.
+
 This is the human-readable index for the machine-readable journals in this directory. Every transaction below finalized on StudioNet and is linked directly to GenLayer Studio Explorer. A transaction is marked verified only when its method return and authoritative post-transaction contract readback matched the expected result.
 
 ## Deployment under test

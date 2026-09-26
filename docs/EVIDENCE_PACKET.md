@@ -11,19 +11,30 @@ This file distinguishes completed StudioNet evidence from claims the current pub
 - Source adapter: fixed Contracts Finder single-release origin; no arbitrary positive-evidence URL
 - Observed official source identity and digest: `docs/TEST_RESOURCE_MANIFEST.md`
 
-## Completed StudioNet evidence
+## Superseded StudioNet evidence
 
 - Contract: `0x3587E5d4cc060718a4b7E4b2aA77A6AcC7f44aC1`
 - Deployed source SHA-256: `cfb26686b4802d3874b18e021d23e8cf05deb26f7a9a8c75e64618fd8293c1dd`
 - Base lifecycle journal: `verification/live-0x3587e5d4cc060718a4b7e4b2aa77a6acc7f44ac1.json` (`10/10` readback verified)
 - Extended journal: `verification/extended-0x3587e5d4cc060718a4b7e4b2aa77a6acc7f44ac1.json` (`10/10` readback verified)
 - Clickable live transaction index: [`verification/LIVE_RESULTS.md`](../verification/LIVE_RESULTS.md)
-- Happy path: create, anchor, bind, independent auditor assessment, freeze.
+- These transactions verify the prior v2 mechanics only. They do not satisfy the new reviewer request because the same release was reused and the source does not publish actual evaluation criteria or substantive award-rationale passages.
 - Integrity failure: transaction `0x211da5bf0059fb03096577a2068b5d9a3ee48401fea1985e5ecdbc9a929efcbc` returned `INTEGRITY_FAILURE`; watch `1` remained `MONITORING`.
 - Identity failure: transaction `0x0e3388e25c945d1ebea1e9334c8f527a7a2e3c042d595b194d63b5de42201982` returned `IDENTITY_FAILURE`; watch `2` remained `MONITORING`.
 - Revision lineage: transaction `0x5e81699781e78fc7a4b3a64bccf6b8d62336e82eaae0617bf7c1733364e2a2a4` created revision `1`; authoritative readback proves parent `0` and count `2`.
 - Final freeze: transaction `0x686fb9ce97c4acea96283f238effa19b73f0168990df20f3e3d559907ca87239`; watch `3` is `FROZEN`.
 - UI verification: localhost loaded contract state for watch `3` and displayed `FULLY_TRACED`, `FROZEN`, three `ADDRESSED` rows, and canonical `Revision 1`, matching authoritative readback.
+
+## Required replacement evidence
+
+- New v3 deployment with exact source parity and `get_contract_version` readback.
+- Three distinct publisher addresses assigned at watch creation.
+- Separate tender and award release GUIDs for the same OCID, with award timestamp later than tender.
+- Tender source must publish actual evaluation criteria; each stored criterion must include a JSON pointer.
+- Award source must publish substantive rationale; every `ADDRESSED` or `CONTRADICTED` relation must store its JSON pointer and excerpt.
+- Negative finalized transactions for role violation, release-role reuse, non-chronological release, missing criteria, and missing rationale.
+- If a correction is claimed, a third distinct release and correction-publisher transaction, later than the award.
+- Browser readback matching the new authoritative state and transaction journal.
 
 ## Explicit limitation
 

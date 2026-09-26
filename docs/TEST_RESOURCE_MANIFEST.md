@@ -18,7 +18,7 @@
 
 This is a point-in-time observation, not an assertion that the endpoint is immutable. The contract re-fetches the derived URL and requires exact raw-byte digest and OCID agreement before positive mutation. If the authority changes the representation, the old digest fails closed.
 
-This sample is suitable for demonstrating official-source binding, parser behavior, assessment, and readback. Because it is already tagged `award`, it is **not** evidence of a real prospective pre-award anchor. A submission claiming the prospective property must use an earlier tender release and a later award release for the same OCID, with both raw digests recorded.
+This sample is suitable only for demonstrating official-source binding and negative fail-closed behavior. A fresh inspection found no published `tender.awardCriteriaDetails`, no evaluation-criteria document carrying actual scoring criteria, and no substantive award `description` or `rationale`. Therefore v3 must return `CRITERIA_NOT_PUBLISHED` or `RATIONALE_NOT_PUBLISHED`; it must not manufacture criteria from scope/classification fields or claim a positive trace. A valid resubmission needs distinct tender, award, and (for correction evidence) correction releases for one OCID, with published criteria/rationale passages, chronological timestamps, and recorded raw digests.
 
 ## Fixture classification
 

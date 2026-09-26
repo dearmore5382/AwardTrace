@@ -4,7 +4,7 @@ AwardTrace is a GenLayer dApp that creates a criterion-level, append-only trace 
 
 ## Architecture
 
-This is a temporal evidence ledger, not a one-shot document reviewer. A steward first commits an official release identity and raw-byte digest, criteria are anchored, an award release is bound later, and an independent caller can trigger a criterion-by-criterion intelligent assessment. Corrections become child revisions; earlier revisions remain readable.
+This is a temporal evidence ledger, not a one-shot document reviewer. A tender publisher commits a tender release whose actual published evaluation criteria are extracted with source pointers. A distinct award publisher binds a later award release. An independent caller can then trigger a criterion-by-criterion assessment whose consequential relations cite exact published award-rationale passages. A third correction publisher can append later corrections; earlier revisions remain readable.
 
 ```text
 official release -> exact-byte verification -> criteria anchor
@@ -19,14 +19,17 @@ official award  -> exact-byte verification -> criterion trace -> revision chain 
 - Binding: OCID + release GUID + raw response SHA-256 + contract state.
 - Source outage: returns `SOURCE_RETRYABLE` and does not create positive state.
 - Digest or OCID mismatch: returns an explicit integrity/identity failure and does not create positive state.
-- AI output: one bounded pipe-delimited relation vector, independently re-executed by validators. Criterion IDs, source locator, identity flag, amendment flag, trace JSON, and summary are derived deterministically.
+- AI output: one bounded relation/citation vector, independently re-executed by validators. Criterion IDs, tender source pointers, cited award excerpts, identity flag, amendment flag, trace JSON, and summary are validated or derived deterministically.
+- Role and chronology guards: tender, award, and correction publishers are distinct; releases cannot be reused across roles; award/correction timestamps must advance.
 - Synthetic fixtures: unit tests only, never represented as live authority.
 
 ## Roles
 
 - Primary wallet: deploys the contract only.
-- Test wallet A: procurement steward; creates the watch, anchors criteria, binds the award, appends corrections, and freezes.
-- Test wallet B: independent public auditor; invokes the permissionless assessment and verifies public readback.
+- Tender publisher: creates the watch and anchors published criteria.
+- Award publisher: binds the independent later award release.
+- Correction publisher: appends an independent later correction release.
+- Public auditor: invokes the permissionless assessment and verifies public readback.
 
 Private keys are never committed or bundled into the frontend. The browser uses an injected wallet and `genlayer-js`.
 
@@ -46,7 +49,7 @@ genvm-lint typecheck contracts\AwardTrace.py
 npm run build
 ```
 
-The current verified result is 18 passing Python tests, a successful static production build, and two finalized StudioNet journals with authoritative readback.
+The reviewer-requested v3 source currently passes 21 Python tests, GenVM lint, and a production frontend build. A new StudioNet deployment and new role-separated live evidence are still required before resubmission.
 
 ## Deploy and operate
 
@@ -61,6 +64,6 @@ See [`docs/VERIFICATION_GUIDE.md`](docs/VERIFICATION_GUIDE.md), [`docs/TEST_RESO
 
 ## Current deployment truth
 
-The verified StudioNet deployment is `0x3587E5d4cc060718a4b7E4b2aA77A6AcC7f44aC1`. The frontend defaults to public evidence watch `3`; users may still enter another deployment or watch. The submitted evidence journals contain only finalized transactions with authoritative post-transaction readback.
+The prior deployment `0x3587E5d4cc060718a4b7E4b2aA77A6AcC7f44aC1` implements the superseded workflow and must not be represented as satisfying the reviewer request. The v3 frontend intentionally has no default contract address and checks `get_contract_version` before every write. Deploy the exact current source, then collect new evidence from distinct tender, award, and correction releases before resubmission.
 
 Live frontend: https://awardtrace.pages.dev
