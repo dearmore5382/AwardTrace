@@ -44,4 +44,6 @@ Production frontend: [`https://awardtrace.pages.dev`](https://awardtrace.pages.d
 
 See [`docs/RULES_APPLICATION.md`](docs/RULES_APPLICATION.md) for the repository-wide rule audit and the evidence gate that must be met before submission.
 
+For the complete steward-facing resubmission response, verification path, and paste-ready update text, see [`STEWARD_RESUBMISSION.md`](STEWARD_RESUBMISSION.md).
+
 AwardTrace reports what the published notices evidence. It does not claim legality, fairness, value for money, or absence of corruption.
