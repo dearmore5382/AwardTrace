@@ -1,6 +1,6 @@
 # AwardTrace live StudioNet E2E results
 
-> **v5.1 deployment gate (current):** the reviewer-compliant three-release source is ready but has not yet been deployed by the primary wallet. Required source: `contracts/AwardTrace.py`, 19,450 bytes, SHA-256 `2d189b1b8fcbcf55bb52d11dfa1478c96a5cc0786dfbd555b956a61b3fe7514e`. Contract `0xd2b22f52c32A89B9e93fa508dBcda0E472C1CFA1` has exact v5 source parity but is superseded because its strict parser rejected a semantically valid model response; do not submit it as successful lifecycle proof.
+> **v5.2 deployment gate (current):** deploy `contracts/AwardTrace.py`, 18,809 bytes, SHA-256 `f1380a25b559da58f7457afd7a677b31e8d915374fb7e8a0792bda4068ff3cc3`. Contracts `0xd2b22f52c32A89B9e93fa508dBcda0E472C1CFA1` and `0x932e1E193a5264C48C53C943a17bE95f706fd5A3` are superseded: real runs proved free-form model output could not provide reproducible consensus. v5.2 instead reaches deterministic validator consensus over the official TED rationale/modification fields.
 
 > **Superseded evidence:** these transactions belong to prior contract schemas. They remain published for audit history, but they do not satisfy the reviewer request for distinct tender/award/correction releases, actual published evaluation criteria, or cited award-rationale passages. Do not submit them as v5 evidence.
 

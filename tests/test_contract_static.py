@@ -30,7 +30,7 @@ def test_two_party_phase_separated_surface():
 
 def test_consensus_and_bounded_ai_output():
     assert "gl.vm.run_nondet(" in SOURCE
-    assert "gl.eq_principle.prompt_comparative(evaluate, principle)" in SOURCE
+    assert SOURCE.count("gl.vm.run_nondet(") >= 2
     assert "def _parse_relations" in SOURCE
     assert "UNCITED_CONSEQUENTIAL_RELATION" in SOURCE
     assert 'fields = ("award-criterion-order-justification-lot"' in SOURCE
