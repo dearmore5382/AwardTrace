@@ -37,6 +37,6 @@ npm run lint
 npm run build
 ```
 
-Current local result: 12 Python tests pass and frontend lint passes. Deployment `0x67Cf91014e41e0862C5d1968135C58c4AFe64C72` proved TED retrieval, criteria extraction, chronology and two-wallet authorization, but its first independent AI assessment failed consensus because validators compared independently generated text byte-for-byte. The validator now audits the leader trace structurally and semantically instead. This corrected source requires a fresh StudioNet deployment; the superseded address is intentionally not embedded.
+Current local result: 12 Python tests pass and frontend lint passes. Deployments `0x67Cf91014e41e0862C5d1968135C58c4AFe64C72` and `0x74DF02722C2FE31C96999be38c76B6ca2E68d273` proved TED retrieval, criteria extraction, chronology and two-wallet authorization, but their independent assessment validators were too strict for nondeterministic semantic output. Assessment now uses GenLayer's comparative equivalence principle, requiring agreement on every criterion relation and cited official passage while tolerating harmless formatting differences. This corrected source requires a fresh deployment.
 
 AwardTrace reports what the published notices evidence. It does not claim legality, fairness, value for money, or absence of corruption.

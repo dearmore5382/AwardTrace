@@ -30,11 +30,10 @@ def test_two_party_phase_separated_surface():
 
 def test_consensus_and_bounded_ai_output():
     assert "gl.vm.run_nondet(" in SOURCE
-    assert "gl.vm.run_nondet_unsafe" in SOURCE
+    assert "gl.eq_principle.prompt_comparative(evaluate, principle)" in SOURCE
     assert "def _parse_relations" in SOURCE
     assert "UNCITED_CONSEQUENTIAL_RELATION" in SOURCE
     assert "def _derive" in SOURCE
-    assert 'verdict.strip().upper() == "TRUE"' in SOURCE
     assert "json.loads(proposal.calldata) == json.loads(evaluate())" not in SOURCE
 
 
