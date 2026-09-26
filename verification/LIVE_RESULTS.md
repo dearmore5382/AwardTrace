@@ -1,6 +1,27 @@
 # AwardTrace live StudioNet E2E results
 
-> **v5.2 deployment gate (current):** deploy `contracts/AwardTrace.py`, 18,809 bytes, SHA-256 `f1380a25b559da58f7457afd7a677b31e8d915374fb7e8a0792bda4068ff3cc3`. Contracts `0xd2b22f52c32A89B9e93fa508dBcda0E472C1CFA1` and `0x932e1E193a5264C48C53C943a17bE95f706fd5A3` are superseded: real runs proved free-form model output could not provide reproducible consensus. v5.2 instead reaches deterministic validator consensus over the official TED rationale/modification fields.
+> **v5.2 CONTRACT_DEPLOYED_VERIFIED:** [`0xa966526ce2c7B79E7Be4561FdF27a29090cB8dFd`](https://explorer-studio.genlayer.com/address/0xa966526ce2c7B79E7Be4561FdF27a29090cB8dFd), exact source `19,591` bytes, SHA-256 `96e60855a7d7e73de793e00a15f8a0b3cde6c462a1c2281553dbd459e4335c6d`. Canonical evidence is case `1`; the machine journal contains all 16 finalized returns and authoritative readbacks.
+
+## Current v5.2 real-source lifecycle
+
+- Machine journal: [`v5-ted-0xa966…json`](v5-ted-0xa966526ce2c7b79e7be4561fdf27a29090cb8dfd.json)
+- Curator: `0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB`
+- Independent auditor: `0xA63DE24e30C88FB1019E8956654730316e36eDBE`
+- Official chain: tender `470710-2023` → award `1424-2024` → correction `538997-2024`
+- Final readback: case `1`, `FROZEN`, revision count `2`
+
+| Proof | Verified return / state | Explorer |
+|---|---|---|
+| Create canonical case | `1` / `SOURCE_REGISTERED` | [`0x4a7e…b487`](https://explorer-studio.genlayer.com/tx/0x4a7e3d467b220b4d1f2071f66a5800c9fcbc23b3cc90b13497e6259c34bbb487) |
+| Anchor tender | `TENDER_ANCHORED` | [`0xebf7…b1df`](https://explorer-studio.genlayer.com/tx/0xebf71220bafe769fb6810b337e3f9bf7a9fdfcb44ad078a2fb7d88c17bafb1df) |
+| Bind award | `AWARD_BOUND` | [`0x2850…8ca3`](https://explorer-studio.genlayer.com/tx/0x2850700d6a48fa2b7224103a8d338a150bec2d8599aa4936ca416cd7d81c8ca3) |
+| Independent award assessment | `FULLY_TRACED` / revision `0` | [`0x1127…be5d`](https://explorer-studio.genlayer.com/tx/0x1127402ddb965e9a2609e6e370d82adeedb77b45028e56ff8ac512438f56be5d) |
+| Bind correction | `CORRECTION_BOUND` | [`0xc0bd…e0a1`](https://explorer-studio.genlayer.com/tx/0xc0bd4d1af7ceb33222c77b188f2a07480d4bcec1f943fb5d958df5ae9df4e0a1) |
+| Independent correction assessment | `FULLY_TRACED` / revision `1` | [`0x2f99…9671`](https://explorer-studio.genlayer.com/tx/0x2f99c9fd7148d856c9ca174de2fb76b7f23f373c9f495449fc20d59386739671) |
+| Freeze | `TRACE_FROZEN` / `FROZEN` | [`0x096e…c6f5`](https://explorer-studio.genlayer.com/tx/0x096e7d4af7839b6ceb255bdcd62afd64d2cafa8cd78b87b5bc42c47dd75dc6f5) |
+| Reject mutation after freeze | `CORRECTION_NOT_APPENDABLE` | [`0x1aca…1bcc`](https://explorer-studio.genlayer.com/tx/0x1aca13b987fb2b6a23dcada01e98fa1d924982b71685589b8ace3ac5be911bcc) |
+
+The first runner attempt encountered an RPC `502` after broadcasting a delayed case `0` creation. It is not used as canonical evidence. The successful rerun selected case `1` and recorded the complete lifecycle without hiding the duplicate.
 
 > **Superseded evidence:** these transactions belong to prior contract schemas. They remain published for audit history, but they do not satisfy the reviewer request for distinct tender/award/correction releases, actual published evaluation criteria, or cited award-rationale passages. Do not submit them as v5 evidence.
 

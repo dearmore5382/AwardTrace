@@ -38,6 +38,8 @@ npm run lint
 npm run build
 ```
 
-Production v5.2 deployment and its finalized transaction journal are pending a primary-wallet deployment. Deploy exactly [`contracts/AwardTrace.py`](contracts/AwardTrace.py): `18,809` bytes, SHA-256 `f1380a25b559da58f7457afd7a677b31e8d915374fb7e8a0792bda4068ff3cc3`. Assessment is deterministic validator consensus over official TED fields: awards cite published rationale; corrections cite modification text but remain `UNCLEAR` unless the official correction itself establishes criterion coverage. Older deployments are superseded.
+Production v5.2 contract: [`0xa966526ce2c7B79E7Be4561FdF27a29090cB8dFd`](https://explorer-studio.genlayer.com/address/0xa966526ce2c7B79E7Be4561FdF27a29090cB8dFd). Exact source parity was verified against [`contracts/AwardTrace.py`](contracts/AwardTrace.py): `19,591` bytes, SHA-256 `96e60855a7d7e73de793e00a15f8a0b3cde6c462a1c2281553dbd459e4335c6d`. The finalized 16-step StudioNet matrix completed on case `1`, including award and correction consensus, two-wallet authorization failures, notice-role reuse failures, append-only revisions, freeze, and authoritative readback. See [`verification/LIVE_RESULTS.md`](verification/LIVE_RESULTS.md). Older deployments are superseded.
+
+See [`docs/RULES_APPLICATION.md`](docs/RULES_APPLICATION.md) for the repository-wide rule audit and the evidence gate that must be met before submission.
 
 AwardTrace reports what the published notices evidence. It does not claim legality, fairness, value for money, or absence of corruption.

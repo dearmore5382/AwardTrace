@@ -31,8 +31,8 @@ def test_two_party_phase_separated_surface():
 def test_consensus_and_bounded_ai_output():
     assert "gl.vm.run_nondet(" in SOURCE
     assert SOURCE.count("gl.vm.run_nondet(") >= 2
-    assert "def _parse_relations" in SOURCE
-    assert "UNCITED_CONSEQUENTIAL_RELATION" in SOURCE
+    assert 'response_format="json"' in SOURCE
+    assert 'keys = ("source_status", "source_binding", "publication_date", "criteria", "passages", "relations")' in SOURCE
     assert 'fields = ("award-criterion-order-justification-lot"' in SOURCE
     assert '"modification-description"' in SOURCE
     assert '"winner-name", "winner-decision-date"' not in SOURCE.split("def _passages", 1)[1].split("def _phase", 1)[0]
@@ -45,3 +45,4 @@ def test_no_money_or_arbitrary_source_surface():
     assert "emit_transfer" not in lowered
     assert "payable" not in lowered
     assert "url: str" not in SOURCE
+    assert "import hashlib" not in SOURCE

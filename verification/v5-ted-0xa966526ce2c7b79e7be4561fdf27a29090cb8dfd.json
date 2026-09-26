@@ -1,0 +1,514 @@
+{
+  "contract": "0xa966526ce2c7B79E7Be4561FdF27a29090cB8dFd",
+  "network": "StudioNet",
+  "source_sha256": "96e60855a7d7e73de793e00a15f8a0b3cde6c462a1c2281553dbd459e4335c6d",
+  "official_sources": {
+    "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+    "tender": "470710-2023",
+    "award": "1424-2024",
+    "correction": "538997-2024"
+  },
+  "wallets": {
+    "curator": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+    "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE"
+  },
+  "balances": {
+    "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB": 98892800000000000000,
+    "0xA63DE24e30C88FB1019E8956654730316e36eDBE": 101101800000000000000
+  },
+  "case_id": "1",
+  "started_at": "2026-09-26T08:45:41.695476+00:00",
+  "steps": [
+    {
+      "id": "F1-invalid-case",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "create_case",
+      "return": "INVALID_CASE",
+      "tx_hash": "0x30cf3e7a22f83c5e2c9ccdd05856c9e25dd84132a2ed0c5bf9a555ad6017be21",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x30cf3e7a22f83c5e2c9ccdd05856c9e25dd84132a2ed0c5bf9a555ad6017be21",
+      "state_after": "NOT_CREATED"
+    },
+    {
+      "id": "H1-create",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "create_case",
+      "return": "1",
+      "tx_hash": "0x4a7e3d467b220b4d1f2071f66a5800c9fcbc23b3cc90b13497e6259c34bbb487",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x4a7e3d467b220b4d1f2071f66a5800c9fcbc23b3cc90b13497e6259c34bbb487",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "",
+        "award_source_binding": "",
+        "case_id": "1",
+        "correction_notice": "",
+        "correction_source_binding": "",
+        "criteria": [],
+        "last_publication_date": "",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+        "revision_count": 0,
+        "status": "SOURCE_REGISTERED",
+        "tender_notice": "470710-2023",
+        "tender_source_binding": ""
+      }
+    },
+    {
+      "id": "A1-auditor-cannot-anchor",
+      "actor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+      "method": "anchor_tender",
+      "return": "CURATOR_ONLY",
+      "tx_hash": "0x14667824c27e426bd923451bcef9555f5d0caa2da21fe1daa4f33e95b41a7ac2",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x14667824c27e426bd923451bcef9555f5d0caa2da21fe1daa4f33e95b41a7ac2",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "",
+        "award_source_binding": "",
+        "case_id": "1",
+        "correction_notice": "",
+        "correction_source_binding": "",
+        "criteria": [],
+        "last_publication_date": "",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+        "revision_count": 0,
+        "status": "SOURCE_REGISTERED",
+        "tender_notice": "470710-2023",
+        "tender_source_binding": ""
+      }
+    },
+    {
+      "id": "F2-premature-assessment",
+      "actor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+      "method": "assess_award",
+      "return": "AWARD_NOT_ASSESSABLE",
+      "tx_hash": "0x48d0208be932868e7648407df151eb7eee52c32bf4babbf9a32cdee2e5b49896",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x48d0208be932868e7648407df151eb7eee52c32bf4babbf9a32cdee2e5b49896",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "",
+        "award_source_binding": "",
+        "case_id": "1",
+        "correction_notice": "",
+        "correction_source_binding": "",
+        "criteria": [],
+        "last_publication_date": "",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+        "revision_count": 0,
+        "status": "SOURCE_REGISTERED",
+        "tender_notice": "470710-2023",
+        "tender_source_binding": ""
+      }
+    },
+    {
+      "id": "H2-anchor-tender",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "anchor_tender",
+      "return": "TENDER_ANCHORED",
+      "tx_hash": "0xebf71220bafe769fb6810b337e3f9bf7a9fdfcb44ad078a2fb7d88c17bafb1df",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0xebf71220bafe769fb6810b337e3f9bf7a9fdfcb44ad078a2fb7d88c17bafb1df",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "",
+        "award_source_binding": "",
+        "case_id": "1",
+        "correction_notice": "",
+        "correction_source_binding": "",
+        "criteria": [],
+        "last_publication_date": "2023-08-02",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+        "revision_count": 0,
+        "status": "TENDER_ANCHORED",
+        "tender_notice": "470710-2023",
+        "tender_source_binding": "{\"notice_type\":\"cn-standard\",\"procedure_id\":\"\",\"publication_date\":\"2023-08-02\",\"publication_number\":\"470710-2023\"}"
+      }
+    },
+    {
+      "id": "F3-reuse-tender-as-award",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "bind_award",
+      "return": "INVALID_AWARD_NOTICE",
+      "tx_hash": "0xd104385de34ebdaad55c2e8ced52411e9785ffb0f3c90b96f99684661291ab32",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0xd104385de34ebdaad55c2e8ced52411e9785ffb0f3c90b96f99684661291ab32",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "",
+        "award_source_binding": "",
+        "case_id": "1",
+        "correction_notice": "",
+        "correction_source_binding": "",
+        "criteria": [],
+        "last_publication_date": "2023-08-02",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+        "revision_count": 0,
+        "status": "TENDER_ANCHORED",
+        "tender_notice": "470710-2023",
+        "tender_source_binding": "{\"notice_type\":\"cn-standard\",\"procedure_id\":\"\",\"publication_date\":\"2023-08-02\",\"publication_number\":\"470710-2023\"}"
+      }
+    },
+    {
+      "id": "H3-bind-award",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "bind_award",
+      "return": "AWARD_BOUND",
+      "tx_hash": "0x2850700d6a48fa2b7224103a8d338a150bec2d8599aa4936ca416cd7d81c8ca3",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x2850700d6a48fa2b7224103a8d338a150bec2d8599aa4936ca416cd7d81c8ca3",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "1424-2024",
+        "award_source_binding": "",
+        "case_id": "1",
+        "correction_notice": "",
+        "correction_source_binding": "",
+        "criteria": [],
+        "last_publication_date": "2023-08-02",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+        "revision_count": 0,
+        "status": "AWARD_BOUND",
+        "tender_notice": "470710-2023",
+        "tender_source_binding": "{\"notice_type\":\"cn-standard\",\"procedure_id\":\"\",\"publication_date\":\"2023-08-02\",\"publication_number\":\"470710-2023\"}"
+      }
+    },
+    {
+      "id": "A2-curator-cannot-assess",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "assess_award",
+      "return": "AUDITOR_ONLY",
+      "tx_hash": "0x89134981d4ecbd36e8f2d8c75dd01996fa3e410f5b748e8c7c0ed168ffd2beec",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x89134981d4ecbd36e8f2d8c75dd01996fa3e410f5b748e8c7c0ed168ffd2beec",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "1424-2024",
+        "award_source_binding": "",
+        "case_id": "1",
+        "correction_notice": "",
+        "correction_source_binding": "",
+        "criteria": [],
+        "last_publication_date": "2023-08-02",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+        "revision_count": 0,
+        "status": "AWARD_BOUND",
+        "tender_notice": "470710-2023",
+        "tender_source_binding": "{\"notice_type\":\"cn-standard\",\"procedure_id\":\"\",\"publication_date\":\"2023-08-02\",\"publication_number\":\"470710-2023\"}"
+      }
+    },
+    {
+      "id": "H4-independent-assessment",
+      "actor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+      "method": "assess_award",
+      "return": "FULLY_TRACED",
+      "tx_hash": "0x1127402ddb965e9a2609e6e370d82adeedb77b45028e56ff8ac512438f56be5d",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x1127402ddb965e9a2609e6e370d82adeedb77b45028e56ff8ac512438f56be5d",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "1424-2024",
+        "award_source_binding": "{\"notice_type\":\"can-standard\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-01-02\",\"publication_number\":\"1424-2024\"}",
+        "case_id": "1",
+        "correction_notice": "",
+        "correction_source_binding": "",
+        "criteria": [
+          {
+            "criterion_id": "C1",
+            "source_pointer": "award-criterion-name-lot/0",
+            "text": " - Nett\u00f3 aj\u00e1nlati \u00e1r, HUF",
+            "type": "PRICE",
+            "weight": "poi-exa"
+          }
+        ],
+        "last_publication_date": "2024-01-02",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+        "revision_count": 1,
+        "status": "TRACE_OPEN",
+        "tender_notice": "470710-2023",
+        "tender_source_binding": "{\"notice_type\":\"cn-standard\",\"procedure_id\":\"\",\"publication_date\":\"2023-08-02\",\"publication_number\":\"470710-2023\"}"
+      }
+    },
+    {
+      "id": "F4-award-reused-as-correction",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "append_correction",
+      "return": "NOTICE_ROLE_REUSE",
+      "tx_hash": "0x96f7f4b1c5bc867a5ad1fbf438c4823199a9c7a13fa64c817e2cf045d0084514",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x96f7f4b1c5bc867a5ad1fbf438c4823199a9c7a13fa64c817e2cf045d0084514",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "1424-2024",
+        "award_source_binding": "{\"notice_type\":\"can-standard\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-01-02\",\"publication_number\":\"1424-2024\"}",
+        "case_id": "1",
+        "correction_notice": "",
+        "correction_source_binding": "",
+        "criteria": [
+          {
+            "criterion_id": "C1",
+            "source_pointer": "award-criterion-name-lot/0",
+            "text": " - Nett\u00f3 aj\u00e1nlati \u00e1r, HUF",
+            "type": "PRICE",
+            "weight": "poi-exa"
+          }
+        ],
+        "last_publication_date": "2024-01-02",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+        "revision_count": 1,
+        "status": "TRACE_OPEN",
+        "tender_notice": "470710-2023",
+        "tender_source_binding": "{\"notice_type\":\"cn-standard\",\"procedure_id\":\"\",\"publication_date\":\"2023-08-02\",\"publication_number\":\"470710-2023\"}"
+      }
+    },
+    {
+      "id": "H5-bind-correction",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "append_correction",
+      "return": "CORRECTION_BOUND",
+      "tx_hash": "0xc0bd4d1af7ceb33222c77b188f2a07480d4bcec1f943fb5d958df5ae9df4e0a1",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0xc0bd4d1af7ceb33222c77b188f2a07480d4bcec1f943fb5d958df5ae9df4e0a1",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "1424-2024",
+        "award_source_binding": "{\"notice_type\":\"can-standard\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-01-02\",\"publication_number\":\"1424-2024\"}",
+        "case_id": "1",
+        "correction_notice": "538997-2024",
+        "correction_source_binding": "{\"notice_type\":\"can-modif\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-09-09\",\"publication_number\":\"538997-2024\"}",
+        "criteria": [
+          {
+            "criterion_id": "C1",
+            "source_pointer": "award-criterion-name-lot/0",
+            "text": " - Nett\u00f3 aj\u00e1nlati \u00e1r, HUF",
+            "type": "PRICE",
+            "weight": "poi-exa"
+          }
+        ],
+        "last_publication_date": "2024-01-02",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+        "revision_count": 1,
+        "status": "CORRECTION_BOUND",
+        "tender_notice": "470710-2023",
+        "tender_source_binding": "{\"notice_type\":\"cn-standard\",\"procedure_id\":\"\",\"publication_date\":\"2023-08-02\",\"publication_number\":\"470710-2023\"}"
+      }
+    },
+    {
+      "id": "A3-curator-cannot-assess-correction",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "assess_correction",
+      "return": "AUDITOR_ONLY",
+      "tx_hash": "0x9abb65b678dc66e445c2614c6f7e3d8b78c98029a6b323a175eebd943da479d1",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x9abb65b678dc66e445c2614c6f7e3d8b78c98029a6b323a175eebd943da479d1",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "1424-2024",
+        "award_source_binding": "{\"notice_type\":\"can-standard\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-01-02\",\"publication_number\":\"1424-2024\"}",
+        "case_id": "1",
+        "correction_notice": "538997-2024",
+        "correction_source_binding": "{\"notice_type\":\"can-modif\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-09-09\",\"publication_number\":\"538997-2024\"}",
+        "criteria": [
+          {
+            "criterion_id": "C1",
+            "source_pointer": "award-criterion-name-lot/0",
+            "text": " - Nett\u00f3 aj\u00e1nlati \u00e1r, HUF",
+            "type": "PRICE",
+            "weight": "poi-exa"
+          }
+        ],
+        "last_publication_date": "2024-01-02",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+        "revision_count": 1,
+        "status": "CORRECTION_BOUND",
+        "tender_notice": "470710-2023",
+        "tender_source_binding": "{\"notice_type\":\"cn-standard\",\"procedure_id\":\"\",\"publication_date\":\"2023-08-02\",\"publication_number\":\"470710-2023\"}"
+      }
+    },
+    {
+      "id": "H6-assess-correction",
+      "actor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+      "method": "assess_correction",
+      "return": "FULLY_TRACED",
+      "tx_hash": "0x2f99c9fd7148d856c9ca174de2fb76b7f23f373c9f495449fc20d59386739671",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x2f99c9fd7148d856c9ca174de2fb76b7f23f373c9f495449fc20d59386739671",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "1424-2024",
+        "award_source_binding": "{\"notice_type\":\"can-standard\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-01-02\",\"publication_number\":\"1424-2024\"}",
+        "case_id": "1",
+        "correction_notice": "538997-2024",
+        "correction_source_binding": "{\"notice_type\":\"can-modif\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-09-09\",\"publication_number\":\"538997-2024\"}",
+        "criteria": [
+          {
+            "criterion_id": "C1",
+            "source_pointer": "award-criterion-name-lot/0",
+            "text": " - Nett\u00f3 aj\u00e1nlati \u00e1r, HUF",
+            "type": "PRICE",
+            "weight": "poi-exa"
+          }
+        ],
+        "last_publication_date": "2024-09-09",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+        "revision_count": 2,
+        "status": "TRACE_OPEN",
+        "tender_notice": "470710-2023",
+        "tender_source_binding": "{\"notice_type\":\"cn-standard\",\"procedure_id\":\"\",\"publication_date\":\"2023-08-02\",\"publication_number\":\"470710-2023\"}"
+      }
+    },
+    {
+      "id": "F5-correction-release-reuse",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "append_correction",
+      "return": "NOTICE_ROLE_REUSE",
+      "tx_hash": "0xa29a746fa3307948dee0358bc653aade73e2f8949c6a1191f46eb790f821e0e3",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0xa29a746fa3307948dee0358bc653aade73e2f8949c6a1191f46eb790f821e0e3",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "1424-2024",
+        "award_source_binding": "{\"notice_type\":\"can-standard\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-01-02\",\"publication_number\":\"1424-2024\"}",
+        "case_id": "1",
+        "correction_notice": "538997-2024",
+        "correction_source_binding": "{\"notice_type\":\"can-modif\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-09-09\",\"publication_number\":\"538997-2024\"}",
+        "criteria": [
+          {
+            "criterion_id": "C1",
+            "source_pointer": "award-criterion-name-lot/0",
+            "text": " - Nett\u00f3 aj\u00e1nlati \u00e1r, HUF",
+            "type": "PRICE",
+            "weight": "poi-exa"
+          }
+        ],
+        "last_publication_date": "2024-09-09",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+        "revision_count": 2,
+        "status": "TRACE_OPEN",
+        "tender_notice": "470710-2023",
+        "tender_source_binding": "{\"notice_type\":\"cn-standard\",\"procedure_id\":\"\",\"publication_date\":\"2023-08-02\",\"publication_number\":\"470710-2023\"}"
+      }
+    },
+    {
+      "id": "H7-freeze",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "freeze_trace",
+      "return": "TRACE_FROZEN",
+      "tx_hash": "0x096e7d4af7839b6ceb255bdcd62afd64d2cafa8cd78b87b5bc42c47dd75dc6f5",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x096e7d4af7839b6ceb255bdcd62afd64d2cafa8cd78b87b5bc42c47dd75dc6f5",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "1424-2024",
+        "award_source_binding": "{\"notice_type\":\"can-standard\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-01-02\",\"publication_number\":\"1424-2024\"}",
+        "case_id": "1",
+        "correction_notice": "538997-2024",
+        "correction_source_binding": "{\"notice_type\":\"can-modif\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-09-09\",\"publication_number\":\"538997-2024\"}",
+        "criteria": [
+          {
+            "criterion_id": "C1",
+            "source_pointer": "award-criterion-name-lot/0",
+            "text": " - Nett\u00f3 aj\u00e1nlati \u00e1r, HUF",
+            "type": "PRICE",
+            "weight": "poi-exa"
+          }
+        ],
+        "last_publication_date": "2024-09-09",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+        "revision_count": 2,
+        "status": "FROZEN",
+        "tender_notice": "470710-2023",
+        "tender_source_binding": "{\"notice_type\":\"cn-standard\",\"procedure_id\":\"\",\"publication_date\":\"2023-08-02\",\"publication_number\":\"470710-2023\"}"
+      }
+    },
+    {
+      "id": "F6-correction-after-freeze",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "append_correction",
+      "return": "CORRECTION_NOT_APPENDABLE",
+      "tx_hash": "0x1aca13b987fb2b6a23dcada01e98fa1d924982b71685589b8ace3ac5be911bcc",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x1aca13b987fb2b6a23dcada01e98fa1d924982b71685589b8ace3ac5be911bcc",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "1424-2024",
+        "award_source_binding": "{\"notice_type\":\"can-standard\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-01-02\",\"publication_number\":\"1424-2024\"}",
+        "case_id": "1",
+        "correction_notice": "538997-2024",
+        "correction_source_binding": "{\"notice_type\":\"can-modif\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-09-09\",\"publication_number\":\"538997-2024\"}",
+        "criteria": [
+          {
+            "criterion_id": "C1",
+            "source_pointer": "award-criterion-name-lot/0",
+            "text": " - Nett\u00f3 aj\u00e1nlati \u00e1r, HUF",
+            "type": "PRICE",
+            "weight": "poi-exa"
+          }
+        ],
+        "last_publication_date": "2024-09-09",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+        "revision_count": 2,
+        "status": "FROZEN",
+        "tender_notice": "470710-2023",
+        "tender_source_binding": "{\"notice_type\":\"cn-standard\",\"procedure_id\":\"\",\"publication_date\":\"2023-08-02\",\"publication_number\":\"470710-2023\"}"
+      }
+    }
+  ],
+  "complete": true,
+  "final_case": {
+    "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+    "award_notice": "1424-2024",
+    "award_source_binding": "{\"notice_type\":\"can-standard\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-01-02\",\"publication_number\":\"1424-2024\"}",
+    "case_id": "1",
+    "correction_notice": "538997-2024",
+    "correction_source_binding": "{\"notice_type\":\"can-modif\",\"procedure_id\":\"c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1\",\"publication_date\":\"2024-09-09\",\"publication_number\":\"538997-2024\"}",
+    "criteria": [
+      {
+        "criterion_id": "C1",
+        "source_pointer": "award-criterion-name-lot/0",
+        "text": " - Nett\u00f3 aj\u00e1nlati \u00e1r, HUF",
+        "type": "PRICE",
+        "weight": "poi-exa"
+      }
+    ],
+    "last_publication_date": "2024-09-09",
+    "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+    "procedure_id": "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1",
+    "revision_count": 2,
+    "status": "FROZEN",
+    "tender_notice": "470710-2023",
+    "tender_source_binding": "{\"notice_type\":\"cn-standard\",\"procedure_id\":\"\",\"publication_date\":\"2023-08-02\",\"publication_number\":\"470710-2023\"}"
+  },
+  "final_revisions": [
+    {
+      "case_id": "1",
+      "notice": "1424-2024",
+      "parent": "",
+      "revision": "0",
+      "summary": "FULLY_TRACED",
+      "trace": [
+        {
+          "award_excerpt": "Az aj\u00e1nlatk\u00e9r\u0151 a ki nem z\u00e1rt aj\u00e1nlattev\u0151(k) \u00e1ltal beny\u00fajtott, \u00e9rv\u00e9nyes aj\u00e1nlatokat a legalacsonyabb \u00e1r \u00e9rt\u00e9kel\u00e9si szempont alapj\u00e1n - Kbt. 76. \u00a7 (2) bekezd\u00e9s a) pont - b\u00edr\u00e1lja el. Aj\u00e1nlatk\u00e9r\u0151 jelen elj\u00e1r\u00e1sban a legalacsonyabb \u00e1r egyed\u00fcli \u00e9rt\u00e9kel\u00e9si szempontj\u00e1t alkalmazza, mivel Aj\u00e1nlatk\u00e9r\u0151 ig\u00e9nyeinek a beszerz\u00e9s t\u00e1rgyak\u00e9nt konkr\u00e9tan meghat\u00e1rozott min\u0151s\u00e9gi \u00e9s m\u0171szaki k\u00f6vetelm\u00e9nyeknek megfelel\u0151 szolg\u00e1ltat\u00e1s felel meg, e",
+          "award_reference": "award-criterion-order-justification-lot/0",
+          "criterion_id": "C1",
+          "relation": "ADDRESSED"
+        }
+      ]
+    },
+    {
+      "case_id": "1",
+      "notice": "538997-2024",
+      "parent": "0",
+      "revision": "1",
+      "summary": "FULLY_TRACED",
+      "trace": [
+        {
+          "award_excerpt": "Felek a Szerz\u0151d\u00e9s v\u00e1llalkoz\u00f3i d\u00edj m\u00e9rt\u00e9k\u00e9r\u0151l sz\u00f3l\u00f3 7.1. pontj\u00e1nak a)-d) alpontj\u00e1t akk\u00e9nt m\u00f3dos\u00edtott\u00e1k, hogy az eddigi rendelkez\u00e9sek hely\u00e9be az al\u00e1bbi rendelkez\u00e9sek l\u00e9pnek: \u201ea) 9-19 f\u0151s aut\u00f3busz km-d\u00edja 493 Ft + \u00e1fa, \u00f3rad\u00edja 9 855 Ft + \u00e1fa; b) 20-30 f\u0151 aut\u00f3busz km-d\u00edja 602 Ft + \u00e1fa, \u00f3rad\u00edja 11 498 Ft + \u00e1fa; c) 31-49 f\u0151 aut\u00f3busz km-d\u00edja 712 Ft + \u00e1fa, \u00f3rad\u00edja 12 593 Ft + \u00e1fa; d) 50-54 f\u0151 aut\u00f3busz km-d\u00edja 821 Ft + \u00e1fa, \u00f3",
+          "award_reference": "modification-description/0",
+          "criterion_id": "C1",
+          "relation": "ADDRESSED"
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-09-26T08:58:25.138357+00:00"
+}

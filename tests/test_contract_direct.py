@@ -41,7 +41,7 @@ def sync(vm, contract):
 
 def criteria():
     return [{"criterion_id":"C1", "type":"PRICE", "text":"Price", "weight":"per-exa",
-             "source_pointer":"award-criterion-name-lot/0", "fingerprint":"123456789abc"}]
+             "source_pointer":"award-criterion-name-lot/0"}]
 
 
 def trace(relation="ADDRESSED"):
@@ -63,13 +63,9 @@ def test_parser_extracts_real_eforms_fields_and_phases():
 
 def test_relation_parser_and_summary_are_fail_closed():
     module = deploy()[1]._instance.create_case.__globals__
-    passages = [{"pointer":"winner-name/0", "excerpt":"Winner"}]
-    parsed = module["_parse_relations"]("ADDRESSED@P0", criteria(), passages)
-    assert module["_derive"](parsed) == "FULLY_TRACED"
-    spaced = module["_parse_relations"]("Result: **ADDRESSED @ P0**", criteria(), passages)
-    assert module["_derive"](spaced) == "FULLY_TRACED"
-    with pytest.raises(Exception): module["_parse_relations"]("ADDRESSED@NONE", criteria(), passages)
-    with pytest.raises(Exception): module["_parse_relations"]("SUPPORTED@P0", criteria(), passages)
+    assert module["_relations"]({"relations":[" addressed "]}, 1) == ["ADDRESSED"]
+    with pytest.raises(Exception): module["_relations"]({"relations":["SUPPORTED"]}, 1)
+    with pytest.raises(Exception): module["_relations"]({"relations":[], "reason":"extra"}, 1)
     assert module["_derive"](trace("CONTRADICTED")) == "PUBLISHED_CONFLICT"
 
 
@@ -89,7 +85,7 @@ def test_two_wallet_happy_path_and_authorization():
     with vm.activate():
         sync(vm, contract)
         assert contract.create_case(PROCEDURE, "616030-2024", address(auditor)) == "0"
-        contract._instance._source_consensus = lambda *_: {"source_status":"VERIFIED", "raw_sha256":"a"*64,
+        contract._instance._source_consensus = lambda *_: {"source_status":"VERIFIED", "source_binding":"tender",
             "publication_date":"2024-10-11", "criteria":criteria()}
         assert contract.anchor_tender("0") == "TENDER_ANCHORED"
         assert contract.bind_award("0", "4-2025") == "AWARD_BOUND"
@@ -101,7 +97,7 @@ def test_two_wallet_happy_path_and_authorization():
     with vm.activate():
         sync(vm, contract)
         contract._instance._assessment_consensus = lambda *_: {"source_status":"VERIFIED",
-            "raw_sha256":"b"*64, "publication_date":"2025-01-02", "criteria":criteria(), "trace":trace()}
+            "source_binding":"award", "publication_date":"2025-01-02", "criteria":criteria(), "trace":trace()}
         assert contract.assess_award("0") == "FULLY_TRACED"
     record = json.loads(contract.get_case("0"))
     assert record["status"] == "TRACE_OPEN"
@@ -114,7 +110,7 @@ def test_role_reuse_and_chronology_guards():
     with vm.activate():
         sync(vm, contract)
         assert contract.create_case(PROCEDURE, "616030-2024", address(auditor)) == "0"
-        contract._instance._source_consensus = lambda *_: {"source_status":"VERIFIED", "raw_sha256":"a"*64,
+        contract._instance._source_consensus = lambda *_: {"source_status":"VERIFIED", "source_binding":"tender",
             "publication_date":"2024-10-11", "criteria":criteria()}
         assert contract.anchor_tender("0") == "TENDER_ANCHORED"
         assert contract.bind_award("0", "616030-2024") == "INVALID_AWARD_NOTICE"
@@ -123,7 +119,7 @@ def test_role_reuse_and_chronology_guards():
     with vm.activate():
         sync(vm, contract)
         contract._instance._assessment_consensus = lambda *_: {"source_status":"VERIFIED",
-            "raw_sha256":"b"*64, "publication_date":"2024-01-01", "trace":trace()}
+            "source_binding":"award", "publication_date":"2024-01-01", "trace":trace()}
         assert contract.assess_award("0") == "NON_CHRONOLOGICAL_NOTICE"
         assert json.loads(contract.get_case("0"))["revision_count"] == 0
 
@@ -133,7 +129,7 @@ def test_correction_is_distinct_append_only_revision():
     with vm.activate():
         sync(vm, contract)
         assert contract.create_case(PROCEDURE, "470710-2023", address(auditor)) == "0"
-        contract._instance._source_consensus = lambda *_: {"source_status":"VERIFIED", "raw_sha256":"a"*64,
+        contract._instance._source_consensus = lambda *_: {"source_status":"VERIFIED", "source_binding":"tender",
             "publication_date":"2023-08-02"}
         assert contract.anchor_tender("0") == "TENDER_ANCHORED"
         assert contract.bind_award("0", "1424-2024") == "AWARD_BOUND"
@@ -141,12 +137,12 @@ def test_correction_is_distinct_append_only_revision():
     with vm.activate():
         sync(vm, contract)
         contract._instance._assessment_consensus = lambda *_: {"source_status":"VERIFIED",
-            "raw_sha256":"b"*64, "publication_date":"2024-01-02", "criteria":criteria(), "trace":trace()}
+            "source_binding":"award", "publication_date":"2024-01-02", "criteria":criteria(), "trace":trace()}
         assert contract.assess_award("0") == "FULLY_TRACED"
     vm.sender = owner
     with vm.activate():
         sync(vm, contract)
-        contract._instance._source_consensus = lambda *_: {"source_status":"VERIFIED", "raw_sha256":"c"*64,
+        contract._instance._source_consensus = lambda *_: {"source_status":"VERIFIED", "source_binding":"correction",
             "publication_date":"2024-09-09"}
         assert contract.append_correction("0", "538997-2024") == "CORRECTION_BOUND"
         record = json.loads(contract.get_case("0"))
@@ -156,7 +152,7 @@ def test_correction_is_distinct_append_only_revision():
     with vm.activate():
         sync(vm, contract)
         contract._instance._assessment_consensus = lambda *_: {"source_status":"VERIFIED",
-            "raw_sha256":"c"*64, "publication_date":"2024-09-09", "criteria":criteria(),
+            "source_binding":"correction", "publication_date":"2024-09-09", "criteria":criteria(),
             "trace":trace("OMITTED")}
         assert contract.assess_correction("0") == "GAPS_PRESENT"
         assert json.loads(contract.get_case("0"))["revision_count"] == 2

@@ -10,10 +10,10 @@ import { Tabs,TabsContent,TabsList,TabsTrigger } from "@/components/ui/tabs";
 import { Toaster } from "@/components/ui/sonner";
 declare global { interface Window { ethereum?: unknown } }
 type Case={case_id:string;owner:string;auditor:string;procedure_id:string;status:string;tender_notice:string;award_notice:string;correction_notice:string;last_publication_date:string;criteria:Array<{criterion_id:string;text:string;type:string;weight:string;source_pointer:string}>;revision_count:number};
-const PROCEDURE="c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1", TENDER="470710-2023", AWARD="1424-2024", CORRECTION="538997-2024", CONTRACT="", EXPLORER="https://explorer-studio.genlayer.com";
+const PROCEDURE="c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1", TENDER="470710-2023", AWARD="1424-2024", CORRECTION="538997-2024", CONTRACT="0xa966526ce2c7B79E7Be4561FdF27a29090cB8dFd", EXPLORER="https://explorer-studio.genlayer.com";
 
 export default function Home(){
- const [account,setAccount]=useState(""),[contract,setContract]=useState(CONTRACT),[caseId,setCaseId]=useState("0"),[busy,setBusy]=useState("");
+ const [account,setAccount]=useState(""),[contract,setContract]=useState(CONTRACT),[caseId,setCaseId]=useState("1"),[busy,setBusy]=useState("");
  const [record,setRecord]=useState<Case|null>(null),[revision,setRevision]=useState<Record<string,unknown>|null>(null),[journal,setJournal]=useState<Array<{label:string;hash:string}>>([]);
  const valid=/^0x[0-9a-fA-F]{40}$/.test(contract), readClient=useMemo(()=>createClient({chain:studionet}),[]);
  async function connect(){if(!window.ethereum)return toast.error("No injected wallet found.");try{const accounts=await(window.ethereum as {request:(x:{method:string})=>Promise<string[]>}).request({method:"eth_requestAccounts"});const selected=accounts[0];const client=createClient({chain:studionet,account:selected as `0x${string}`,provider:window.ethereum});await client.connect("studionet");setAccount(selected);toast.success("Wallet connected to StudioNet")}catch(e){toast.error(e instanceof Error?e.message:"Wallet connection cancelled")}}
