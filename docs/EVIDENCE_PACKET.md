@@ -27,6 +27,8 @@ This file distinguishes completed StudioNet evidence from claims the current pub
 
 ## Required replacement evidence
 
+- Verified v3 deployment: `0xc710672c3B2815Ba0cc945Ff86260cdB591B0BaB`; exact source parity passed (`27,050` bytes, SHA-256 `9fa542c9e939345470afb74c744f955499efe7b92a5acb0c16063f7e45dbe724`), chain `61999`, version/schema readback passed, initial watch count `0`.
+
 - New v3 deployment with exact source parity and `get_contract_version` readback.
 - Three distinct publisher addresses assigned at watch creation.
 - Separate tender and award release GUIDs for the same OCID, with award timestamp later than tender.
