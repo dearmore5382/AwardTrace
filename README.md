@@ -64,6 +64,6 @@ See [`docs/VERIFICATION_GUIDE.md`](docs/VERIFICATION_GUIDE.md), [`docs/TEST_RESO
 
 ## Current deployment truth
 
-The v3 StudioNet deployment is `0xc710672c3B2815Ba0cc945Ff86260cdB591B0BaB`. Its deployed bytes exactly match `contracts/AwardTrace.py` (`27,050` bytes, SHA-256 `9fa542c9e939345470afb74c744f955499efe7b92a5acb0c16063f7e45dbe724`) and `get_contract_version` returns schema `role-separated-cited-procurement-trace-v1`, version `3`. The prior deployment `0x3587E5d4cc060718a4b7E4b2aA77A6AcC7f44aC1` is superseded. New role-separated live evidence is still required before resubmission.
+The current v3 StudioNet deployment is `0x2Fc5df47d11D2c7cf1bB569DD646E676E65810E1`. Its deployed bytes exactly match `contracts/AwardTrace.py` (`27,288` bytes, SHA-256 `07f28df9bcb0d9dbd42ee327ce160d8c18ffa938f8c91757d8d5b075d47c3c57`) and `get_contract_version` returns schema `role-separated-cited-procurement-trace-v1`, version `3`. A four-transaction negative-source matrix is finalized with authoritative readback. A positive trace still requires separate chronological official releases that actually publish evaluation criteria and award rationale.
 
 Live frontend: https://awardtrace.pages.dev

@@ -10,7 +10,7 @@ import { Tabs,TabsContent,TabsList,TabsTrigger } from "@/components/ui/tabs";
 import { Toaster } from "@/components/ui/sonner";
 declare global { interface Window { ethereum?: unknown } }
 type Watch={watch_id:string;owner:string;ocid:string;status:string;tender_publisher:string;award_publisher:string;correction_publisher:string;last_release_date:string;criteria_release_id:string;criteria_sha256:string;criteria:Array<{criterion_id:string;text:string;weight_band:string;source_pointer:string}>;award_release_id:string;award_sha256:string;revision_count:number;current_revision:string};
-const OCID="ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0", RELEASE="a55ff105-de10-4260-b843-e16e40642436", DIGEST="88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a", CONTRACT="0xc710672c3B2815Ba0cc945Ff86260cdB591B0BaB", EXPLORER="https://explorer-studio.genlayer.com";
+const OCID="ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0", RELEASE="a55ff105-de10-4260-b843-e16e40642436", DIGEST="88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a", CONTRACT="0x2Fc5df47d11D2c7cf1bB569DD646E676E65810E1", EXPLORER="https://explorer-studio.genlayer.com";
 
 export default function Home(){
  const [account,setAccount]=useState(""),[contract,setContract]=useState(CONTRACT),[watchId,setWatchId]=useState("3"),[busy,setBusy]=useState("");

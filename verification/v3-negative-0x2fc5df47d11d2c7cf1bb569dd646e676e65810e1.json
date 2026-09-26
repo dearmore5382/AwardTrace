@@ -1,0 +1,142 @@
+{
+  "contract": "0x2Fc5df47d11D2c7cf1bB569DD646E676E65810E1",
+  "network": "StudioNet",
+  "schema": "role-separated-cited-procurement-trace-v1",
+  "started_at": "2026-09-26T02:19:40.262730+00:00",
+  "watch_id": "0",
+  "actors": {
+    "tender": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+    "award": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+    "correction_reserved": "0x1111111111111111111111111111111111111111"
+  },
+  "source": {
+    "ocid": "ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0",
+    "release_id": "a55ff105-de10-4260-b843-e16e40642436",
+    "sha256": "88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a"
+  },
+  "steps": [
+    {
+      "id": "H1-create-role-separated-watch",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "create_watch",
+      "hash": "0xb30750298efda216b3314bb89d4f7c35af984ae7be7ca2c0a208e182fb32bca2",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0xb30750298efda216b3314bb89d4f7c35af984ae7be7ca2c0a208e182fb32bca2",
+      "return": "0",
+      "state_after": {
+        "award_publisher": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_release_id": "",
+        "award_sha256": "",
+        "correction_publisher": "0x1111111111111111111111111111111111111111",
+        "criteria": [],
+        "criteria_release_id": "a55ff105-de10-4260-b843-e16e40642436",
+        "criteria_sha256": "88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a",
+        "current_revision": "",
+        "last_release_date": "",
+        "ocid": "ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "revision_count": 0,
+        "status": "MONITORING",
+        "tender_publisher": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "watch_id": "0"
+      },
+      "status": "READBACK_VERIFIED"
+    },
+    {
+      "id": "A1-award-wallet-cannot-anchor",
+      "actor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+      "method": "anchor_criteria",
+      "hash": "0x48e617ae059c82f307c291e393a590281d29e78b05edb918a73217fd267f44b9",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x48e617ae059c82f307c291e393a590281d29e78b05edb918a73217fd267f44b9",
+      "return": "TENDER_PUBLISHER_ONLY",
+      "state_after": {
+        "award_publisher": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_release_id": "",
+        "award_sha256": "",
+        "correction_publisher": "0x1111111111111111111111111111111111111111",
+        "criteria": [],
+        "criteria_release_id": "a55ff105-de10-4260-b843-e16e40642436",
+        "criteria_sha256": "88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a",
+        "current_revision": "",
+        "last_release_date": "",
+        "ocid": "ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "revision_count": 0,
+        "status": "MONITORING",
+        "tender_publisher": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "watch_id": "0"
+      },
+      "status": "READBACK_VERIFIED"
+    },
+    {
+      "id": "F1-premature-assessment",
+      "actor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+      "method": "assess_award",
+      "hash": "0x8be4c1d576d4fcf4e62d457e217d7a40bbb5ebbc7a76a4cb7077e51343a71544",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x8be4c1d576d4fcf4e62d457e217d7a40bbb5ebbc7a76a4cb7077e51343a71544",
+      "return": "AWARD_NOT_ASSESSABLE",
+      "state_after": {
+        "award_publisher": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_release_id": "",
+        "award_sha256": "",
+        "correction_publisher": "0x1111111111111111111111111111111111111111",
+        "criteria": [],
+        "criteria_release_id": "a55ff105-de10-4260-b843-e16e40642436",
+        "criteria_sha256": "88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a",
+        "current_revision": "",
+        "last_release_date": "",
+        "ocid": "ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "revision_count": 0,
+        "status": "MONITORING",
+        "tender_publisher": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "watch_id": "0"
+      },
+      "status": "READBACK_VERIFIED"
+    },
+    {
+      "id": "F2-no-published-criteria",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "anchor_criteria",
+      "hash": "0xc5e08ab33331e7483276b796eaa1d50bb322f0d89a2ba4add96ffabd9090c803",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0xc5e08ab33331e7483276b796eaa1d50bb322f0d89a2ba4add96ffabd9090c803",
+      "return": "CRITERIA_NOT_PUBLISHED",
+      "state_after": {
+        "award_publisher": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_release_id": "",
+        "award_sha256": "",
+        "correction_publisher": "0x1111111111111111111111111111111111111111",
+        "criteria": [],
+        "criteria_release_id": "a55ff105-de10-4260-b843-e16e40642436",
+        "criteria_sha256": "88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a",
+        "current_revision": "",
+        "last_release_date": "",
+        "ocid": "ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "revision_count": 0,
+        "status": "MONITORING",
+        "tender_publisher": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "watch_id": "0"
+      },
+      "status": "READBACK_VERIFIED"
+    }
+  ],
+  "complete": true,
+  "final_watch": {
+    "award_publisher": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+    "award_release_id": "",
+    "award_sha256": "",
+    "correction_publisher": "0x1111111111111111111111111111111111111111",
+    "criteria": [],
+    "criteria_release_id": "a55ff105-de10-4260-b843-e16e40642436",
+    "criteria_sha256": "88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a",
+    "current_revision": "",
+    "last_release_date": "",
+    "ocid": "ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0",
+    "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+    "revision_count": 0,
+    "status": "MONITORING",
+    "tender_publisher": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+    "watch_id": "0"
+  },
+  "completed_at": "2026-09-26T02:22:40.451405+00:00"
+}

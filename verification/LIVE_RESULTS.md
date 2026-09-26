@@ -2,6 +2,21 @@
 
 > **Superseded evidence:** these transactions belong to the prior contract schema. They remain published for audit history, but they do not satisfy the reviewer request for distinct tender/award/correction releases, actual published evaluation criteria, or cited award-rationale passages. Do not submit them as v3 evidence.
 
+## Current v3 negative-source evidence
+
+- Contract: [`0x2Fc5…10E1`](https://explorer-studio.genlayer.com/address/0x2Fc5df47d11D2c7cf1bB569DD646E676E65810E1)
+- Source parity: exact byte match (`27,288` bytes), SHA-256 `07f28df9bcb0d9dbd42ee327ce160d8c18ffa938f8c91757d8d5b075d47c3c57`
+- Machine journal: [`v3-negative-0x2fc5…json`](v3-negative-0x2fc5df47d11d2c7cf1bb569dd646e676e65810e1.json)
+
+| Step | Verified return | Authoritative state | Explorer |
+|---|---|---|---|
+| Create role-separated watch `0` | `0` | Three distinct roles stored; `MONITORING` | [`0xb307…bca2`](https://explorer-studio.genlayer.com/tx/0xb30750298efda216b3314bb89d4f7c35af984ae7be7ca2c0a208e182fb32bca2) |
+| Award wallet attempts tender anchor | `TENDER_PUBLISHER_ONLY` | Watch unchanged | [`0x48e6…44b9`](https://explorer-studio.genlayer.com/tx/0x48e617ae059c82f307c291e393a590281d29e78b05edb918a73217fd267f44b9) |
+| Premature award assessment | `AWARD_NOT_ASSESSABLE` | Watch unchanged | [`0x8be4…1544`](https://explorer-studio.genlayer.com/tx/0x8be4c1d576d4fcf4e62d457e217d7a40bbb5ebbc7a76a4cb7077e51343a71544) |
+| Official source lacks published criteria | `CRITERIA_NOT_PUBLISHED` | No criteria stored; remained `MONITORING` | [`0xc5e0…c803`](https://explorer-studio.genlayer.com/tx/0xc5e08ab33331e7483276b796eaa1d50bb322f0d89a2ba4add96ffabd9090c803) |
+
+This v3 evidence proves deployment parity, explicit role separation, premature-state rejection, and fail-closed handling of a real official source that does not publish evaluation criteria. It is not positive tender-to-award trace evidence.
+
 This is the human-readable index for the machine-readable journals in this directory. Every transaction below finalized on StudioNet and is linked directly to GenLayer Studio Explorer. A transaction is marked verified only when its method return and authoritative post-transaction contract readback matched the expected result.
 
 ## Deployment under test

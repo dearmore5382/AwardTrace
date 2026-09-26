@@ -27,7 +27,8 @@ This file distinguishes completed StudioNet evidence from claims the current pub
 
 ## Required replacement evidence
 
-- Verified v3 deployment: `0xc710672c3B2815Ba0cc945Ff86260cdB591B0BaB`; exact source parity passed (`27,050` bytes, SHA-256 `9fa542c9e939345470afb74c744f955499efe7b92a5acb0c16063f7e45dbe724`), chain `61999`, version/schema readback passed, initial watch count `0`.
+- Verified v3 deployment: `0x2Fc5df47d11D2c7cf1bB569DD646E676E65810E1`; exact source parity passed (`27,288` bytes, SHA-256 `07f28df9bcb0d9dbd42ee327ce160d8c18ffa938f8c91757d8d5b075d47c3c57`), chain `61999`, version/schema readback passed, initial watch count `0`.
+- Finalized v3 negative journal: [`verification/v3-negative-0x2fc5df47d11d2c7cf1bb569dd646e676e65810e1.json`](../verification/v3-negative-0x2fc5df47d11d2c7cf1bb569dd646e676e65810e1.json), four of four steps readback verified.
 
 - New v3 deployment with exact source parity and `get_contract_version` readback.
 - Three distinct publisher addresses assigned at watch creation.
