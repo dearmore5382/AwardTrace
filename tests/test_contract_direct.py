@@ -67,6 +67,9 @@ def test_relation_parser_and_summary_are_fail_closed():
     with pytest.raises(Exception): module["_relations"]({"relations":["SUPPORTED"]}, 1)
     with pytest.raises(Exception): module["_relations"]({"relations":[], "reason":"extra"}, 1)
     assert module["_derive"](trace("CONTRADICTED")) == "PUBLISHED_CONFLICT"
+    assert module["_derive"](trace("ADDRESSED")) == "FULLY_TRACED"
+    assert module["_derive"](trace("OMITTED")) == "GAPS_PRESENT"
+    assert module["_derive"](trace("UNCLEAR")) == "INSUFFICIENT_OFFICIAL_EVIDENCE"
 
 
 def test_only_rationale_and_modification_fields_can_be_cited():

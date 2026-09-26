@@ -1,6 +1,6 @@
 # Repository rule application
 
-Status: **CONTRACT_DEPLOYED_VERIFIED**. Exact-source deployment and the complete two-wallet contract matrix are verified. Production frontend redeployment/readback remains a separate gate.
+Status: **SUBMISSION_READY_WITH_EVIDENCE_BOUNDARY**. Exact-source contract deployment, the complete two-wallet matrix, and the production frontend binding are verified.
 
 ## Applied to the contract
 
@@ -26,8 +26,15 @@ Status: **CONTRACT_DEPLOYED_VERIFIED**. Exact-source deployment and the complete
 - Real TED tender, award, and correction releases; award and correction assessments both reached validator consensus and created append-only revisions.
 - Authorization, premature action, notice reuse, and post-freeze rejection paths.
 
-## Still required before submission
+## Production UI evidence completed
 
-1. Run validator differential tests for every consequential relation and retain raw GenVM/consensus evidence.
-2. Redeploy the frontend with the verified address and case `1`, then demonstrate that every displayed status, revision, citation, and transaction link matches authoritative readback.
-3. Keep the delayed case `0` creation caused by an RPC `502` out of the canonical evidence path; case `1` is the complete journal.
+- `https://awardtrace.pages.dev` returns HTTP 200 from the production branch.
+- The published bundle embeds the verified contract, real TED release chain, corrected source-binding terminology, and canonical Explorer journal.
+- Case `1` is the default and is loaded automatically from authoritative contract views; its final on-chain state is `FROZEN` with two revisions.
+- Bundle verification is recorded in `verification/frontend-production.json`.
+
+## Evidence boundary
+
+1. Direct Mode exercises and deterministically derives all four outcomes: `FULLY_TRACED`, `GAPS_PRESENT`, `PUBLISHED_CONFLICT`, and `INSUFFICIENT_OFFICIAL_EVIDENCE`. Live TED evidence currently produced `FULLY_TRACED`; no artificial fixture is presented as a real published conflict.
+2. Keep the delayed case `0` creation caused by an RPC `502` out of the canonical evidence path; case `1` is the complete journal.
+3. A future real TED notice that genuinely contradicts its criterion may establish live `PUBLISHED_CONFLICT`; absence of such a notice in this selected chain is not rewritten or simulated.

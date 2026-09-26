@@ -40,6 +40,8 @@ npm run build
 
 Production v5.2 contract: [`0xa966526ce2c7B79E7Be4561FdF27a29090cB8dFd`](https://explorer-studio.genlayer.com/address/0xa966526ce2c7B79E7Be4561FdF27a29090cB8dFd). Exact source parity was verified against [`contracts/AwardTrace.py`](contracts/AwardTrace.py): `19,591` bytes, SHA-256 `96e60855a7d7e73de793e00a15f8a0b3cde6c462a1c2281553dbd459e4335c6d`. The finalized 16-step StudioNet matrix completed on case `1`, including award and correction consensus, two-wallet authorization failures, notice-role reuse failures, append-only revisions, freeze, and authoritative readback. See [`verification/LIVE_RESULTS.md`](verification/LIVE_RESULTS.md). Older deployments are superseded.
 
+Production frontend: [`https://awardtrace.pages.dev`](https://awardtrace.pages.dev). It defaults to the verified contract and case `1`, automatically reads authoritative state, and retains the canonical Explorer transaction journal after reload.
+
 See [`docs/RULES_APPLICATION.md`](docs/RULES_APPLICATION.md) for the repository-wide rule audit and the evidence gate that must be met before submission.
 
 AwardTrace reports what the published notices evidence. It does not claim legality, fairness, value for money, or absence of corruption.

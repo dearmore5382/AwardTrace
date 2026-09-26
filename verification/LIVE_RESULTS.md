@@ -23,6 +23,15 @@
 
 The first runner attempt encountered an RPC `502` after broadcasting a delayed case `0` creation. It is not used as canonical evidence. The successful rerun selected case `1` and recorded the complete lifecycle without hiding the duplicate.
 
+## Production frontend parity
+
+- URL: [`https://awardtrace.pages.dev`](https://awardtrace.pages.dev)
+- HTTP status: `200`
+- Published page asset: `/_next/static/chunks/page-CkZ6VjQy.js`
+- Asset SHA-256: `b45ec216110cb85cdccc328abdca2b5e81868a9cebacca49f16d96e8ed2bbfb7`
+- Verified markers: exact contract address, canonical award-assessment transaction, real source chain, and `Validator consensus + source binding` terminology.
+- Machine record: [`frontend-production.json`](frontend-production.json)
+
 > **Superseded evidence:** these transactions belong to prior contract schemas. They remain published for audit history, but they do not satisfy the reviewer request for distinct tender/award/correction releases, actual published evaluation criteria, or cited award-rationale passages. Do not submit them as v5 evidence.
 
 ## Current v3 negative-source evidence

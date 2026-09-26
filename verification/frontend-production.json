@@ -1,0 +1,22 @@
+{
+  "status": "VERIFIED",
+  "checked_at": "2026-09-26T09:08:43.7558857Z",
+  "url": "https://awardtrace.pages.dev",
+  "http_status": 200,
+  "asset": "/_next/static/chunks/page-CkZ6VjQy.js",
+  "asset_sha256": "b45ec216110cb85cdccc328abdca2b5e81868a9cebacca49f16d96e8ed2bbfb7",
+  "contract": "0xa966526ce2c7B79E7Be4561FdF27a29090cB8dFd",
+  "default_case": "1",
+  "authoritative_state": {
+    "status": "FROZEN",
+    "revision_count": 2,
+    "latest_revision": "1",
+    "summary": "FULLY_TRACED"
+  },
+  "published_markers": {
+    "contract_address": true,
+    "canonical_transaction_journal": true,
+    "real_ted_source_chain": true,
+    "source_binding_terminology": true
+  }
+}
