@@ -1,4 +1,4 @@
-"""Finalized TED v4 happy/failure/adversarial matrix using two local test wallets."""
+"""Finalized TED v5 three-release matrix using two local test wallets."""
 import base64
 import hashlib
 import json
@@ -11,10 +11,11 @@ from genlayer_py import create_account, create_client
 from run_live import ROOT, rpc, tx_return
 from run_live import keys as load_keys
 
-ADDRESS = os.environ.get("AWARDTRACE_CONTRACT_ADDRESS", "0x67Cf91014e41e0862C5d1968135C58c4AFe64C72")
-PROCEDURE = "f78fe5bc-095c-4053-a1de-8c63d1154e15"
-TENDER = "616030-2024"
-AWARD = "4-2025"
+ADDRESS = os.environ.get("AWARDTRACE_CONTRACT_ADDRESS", "")
+PROCEDURE = "c7a1e838-29fc-420d-a45a-8b3c2b2ebdd1"
+TENDER = "470710-2023"
+AWARD = "1424-2024"
+CORRECTION = "538997-2024"
 EXPLORER = "https://explorer-studio.genlayer.com/tx/"
 
 
@@ -50,14 +51,20 @@ def main():
         ("A2-curator-cannot-assess", curator, "assess_award", [case_id], "AUDITOR_ONLY", True),
         ("H4-independent-assessment", auditor, "assess_award", [case_id],
          ("FULLY_TRACED", "GAPS_PRESENT", "PUBLISHED_CONFLICT", "INSUFFICIENT_OFFICIAL_EVIDENCE"), True),
-        ("H5-freeze", curator, "freeze_trace", [case_id], "TRACE_FROZEN", True),
-        ("F4-correction-after-freeze", curator, "append_correction", [case_id, AWARD], "CORRECTION_NOT_APPENDABLE", True),
+        ("F4-award-reused-as-correction", curator, "append_correction", [case_id, AWARD], "NOTICE_ROLE_REUSE", True),
+        ("H5-bind-correction", curator, "append_correction", [case_id, CORRECTION], "CORRECTION_BOUND", True),
+        ("A3-curator-cannot-assess-correction", curator, "assess_correction", [case_id], "AUDITOR_ONLY", True),
+        ("H6-assess-correction", auditor, "assess_correction", [case_id],
+         ("FULLY_TRACED", "GAPS_PRESENT", "PUBLISHED_CONFLICT", "INSUFFICIENT_OFFICIAL_EVIDENCE"), True),
+        ("F5-correction-release-reuse", curator, "append_correction", [case_id, CORRECTION], "NOTICE_ROLE_REUSE", True),
+        ("H7-freeze", curator, "freeze_trace", [case_id], "TRACE_FROZEN", True),
+        ("F6-correction-after-freeze", curator, "append_correction", [case_id, "538998-2024"], "CORRECTION_NOT_APPENDABLE", True),
     ]
     output = {"contract": ADDRESS, "network": "StudioNet", "source_sha256": hashlib.sha256(local).hexdigest(),
-              "official_sources": {"procedure_id": PROCEDURE, "tender": TENDER, "award": AWARD},
+              "official_sources": {"procedure_id": PROCEDURE, "tender": TENDER, "award": AWARD, "correction": CORRECTION},
               "wallets": {"curator": curator.address, "auditor": auditor.address}, "balances": balances,
               "case_id": case_id, "started_at": datetime.now(timezone.utc).isoformat(), "steps": [], "complete": False}
-    target = ROOT / "verification" / ("v4-ted-" + ADDRESS.lower() + ".json")
+    target = ROOT / "verification" / ("v5-ted-" + ADDRESS.lower() + ".json")
     for step_id, actor, method, args, expected, read_case in plan:
         tx_hash = str(clients[actor.address.lower()].write_contract(address=ADDRESS, function_name=method,
                                                                     args=args, value=0, leader_only=False))
@@ -78,7 +85,8 @@ def main():
             time.sleep(5)
         else: raise RuntimeError(step_id + ":FINALITY_TIMEOUT")
     output["final_case"] = json.loads(view("get_case", [case_id], auditor.address))
-    output["final_revision"] = json.loads(view("get_revision", [case_id, "0"], auditor.address))
+    output["final_revisions"] = [json.loads(view("get_revision", [case_id, str(index)], auditor.address))
+                                 for index in range(output["final_case"]["revision_count"])]
     output["complete"] = True
     output["completed_at"] = datetime.now(timezone.utc).isoformat()
     target.write_text(json.dumps(output, indent=2) + "\n", encoding="utf-8")

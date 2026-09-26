@@ -38,6 +38,6 @@ npm run lint
 npm run build
 ```
 
-Production v5 deployment and its finalized transaction journal are pending a primary-wallet deployment. Deploy exactly [`contracts/AwardTrace.py`](contracts/AwardTrace.py): `19,482` bytes, SHA-256 `cc741bdc839a661599e418286ba6555175fad415392427c22c77534d95e29323`. The older v4 address and journal are retained only as superseded history and are not presented as satisfying this reviewer update.
+Production v5.1 deployment and its finalized transaction journal are pending a primary-wallet deployment. Deploy exactly [`contracts/AwardTrace.py`](contracts/AwardTrace.py): `19,450` bytes, SHA-256 `2d189b1b8fcbcf55bb52d11dfa1478c96a5cc0786dfbd555b956a61b3fe7514e`. The older deployments and journals are retained only as superseded history and are not presented as satisfying this reviewer update.
 
 AwardTrace reports what the published notices evidence. It does not claim legality, fairness, value for money, or absence of corruption.

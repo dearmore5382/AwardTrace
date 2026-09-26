@@ -66,7 +66,10 @@ def test_relation_parser_and_summary_are_fail_closed():
     passages = [{"pointer":"winner-name/0", "excerpt":"Winner"}]
     parsed = module["_parse_relations"]("ADDRESSED@P0", criteria(), passages)
     assert module["_derive"](parsed) == "FULLY_TRACED"
+    spaced = module["_parse_relations"]("Result: **ADDRESSED @ P0**", criteria(), passages)
+    assert module["_derive"](spaced) == "FULLY_TRACED"
     with pytest.raises(Exception): module["_parse_relations"]("ADDRESSED@NONE", criteria(), passages)
+    with pytest.raises(Exception): module["_parse_relations"]("SUPPORTED@P0", criteria(), passages)
     assert module["_derive"](trace("CONTRADICTED")) == "PUBLISHED_CONFLICT"
 
 

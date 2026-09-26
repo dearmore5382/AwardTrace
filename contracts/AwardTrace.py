@@ -3,6 +3,7 @@
 from genlayer import *
 import hashlib
 import json
+import re
 import typing
 
 TED_SEARCH = "https://api.ted.europa.eu/v3/notices/search"
@@ -122,12 +123,11 @@ def _date(notice: dict) -> str:
 
 
 def _parse_relations(raw: str, criteria: list, passages: list) -> list:
-    values = [part.strip().upper() for part in raw.strip().split("|")]
-    if len(values) != len(criteria): raise gl.vm.UserError("INVALID_RELATION_OUTPUT")
+    matches = re.findall(r"(ADDRESSED|OMITTED|CONTRADICTED|UNCLEAR)\s*@\s*(P[0-9]+|NONE)", raw.upper())
+    if len(matches) != len(criteria): raise gl.vm.UserError("INVALID_RELATION_OUTPUT")
     trace = []
-    for index, value in enumerate(values):
-        parts = value.split("@")
-        relation, citation = parts[0], parts[1] if len(parts) == 2 else "NONE"
+    for index, match in enumerate(matches):
+        relation, citation = match
         if relation not in RELATIONS: raise gl.vm.UserError("INVALID_RELATION_OUTPUT")
         if citation != "NONE" and (not citation.startswith("P") or not citation[1:].isdigit() or int(citation[1:]) >= len(passages)):
             raise gl.vm.UserError("INVALID_RELATION_OUTPUT")
