@@ -301,10 +301,15 @@ class AwardTrace(gl.Contract):
             try:
                 proposed = result.calldata
                 source = _fetch_release(release_id, digest, ocid)
-                independent = source if source["source_status"] != "VERIFIED" else {
-                    "source_status": "VERIFIED", "actual_sha256": source["actual_sha256"],
-                    "criteria": _criteria_from_release(source["release"]),
-                    "released_at": _release_timestamp(source["release"])}
+                if source["source_status"] != "VERIFIED":
+                    independent = source
+                else:
+                    try:
+                        independent = {"source_status": "VERIFIED", "actual_sha256": source["actual_sha256"],
+                                       "criteria": _criteria_from_release(source["release"]),
+                                       "released_at": _release_timestamp(source["release"])}
+                    except Exception:
+                        independent = {"source_status": "CRITERIA_NOT_PUBLISHED"}
                 if proposed.get("source_status") != independent.get("source_status"):
                     return False
                 if proposed.get("source_status") != "VERIFIED":

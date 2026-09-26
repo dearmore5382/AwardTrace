@@ -39,3 +39,7 @@ def test_criteria_are_deterministic_and_trace_is_audited():
     assert "pipe-delimited line" in SOURCE
     assert 'response_format="json"' not in SOURCE
 
+
+def test_missing_criteria_is_normalized_by_leader_and_validator():
+    assert SOURCE.count('{"source_status": "CRITERIA_NOT_PUBLISHED"}') >= 2
+    assert "except Exception:" in SOURCE
