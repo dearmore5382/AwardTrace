@@ -34,6 +34,8 @@ def test_consensus_and_bounded_ai_output():
     assert "def _parse_relations" in SOURCE
     assert "UNCITED_CONSEQUENTIAL_RELATION" in SOURCE
     assert "def _derive" in SOURCE
+    assert 'verdict.strip().upper() == "TRUE"' in SOURCE
+    assert "json.loads(proposal.calldata) == json.loads(evaluate())" not in SOURCE
 
 
 def test_no_money_or_arbitrary_source_surface():

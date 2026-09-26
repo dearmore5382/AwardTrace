@@ -1,0 +1,254 @@
+{
+  "contract": "0x67Cf91014e41e0862C5d1968135C58c4AFe64C72",
+  "network": "StudioNet",
+  "source_sha256": "8c992782d40320cc288929de6a03a1ec1ec67e37a69650b431c62721df245c62",
+  "official_sources": {
+    "procedure_id": "f78fe5bc-095c-4053-a1de-8c63d1154e15",
+    "tender": "616030-2024",
+    "award": "4-2025"
+  },
+  "wallets": {
+    "curator": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+    "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE"
+  },
+  "balances": {
+    "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB": 98892800000000000000,
+    "0xA63DE24e30C88FB1019E8956654730316e36eDBE": 101101800000000000000
+  },
+  "case_id": "0",
+  "started_at": "2026-09-26T02:49:40.688544+00:00",
+  "steps": [
+    {
+      "id": "F1-invalid-case",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "create_case",
+      "return": "INVALID_CASE",
+      "tx_hash": "0x468ff799bfb80df741e771b256b3740823c788d8368a99b945b86e31946bd9b9",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x468ff799bfb80df741e771b256b3740823c788d8368a99b945b86e31946bd9b9",
+      "state_after": "NOT_CREATED"
+    },
+    {
+      "id": "H1-create",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "create_case",
+      "return": "0",
+      "tx_hash": "0xdf8bb40f8df6a6ccdd6e070d2016b359daac8f9de434f722300f65671ef43f20",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0xdf8bb40f8df6a6ccdd6e070d2016b359daac8f9de434f722300f65671ef43f20",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "",
+        "award_source_sha256": "",
+        "case_id": "0",
+        "criteria": [],
+        "last_publication_date": "",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "f78fe5bc-095c-4053-a1de-8c63d1154e15",
+        "revision_count": 0,
+        "status": "SOURCE_REGISTERED",
+        "tender_notice": "616030-2024",
+        "tender_source_sha256": ""
+      }
+    },
+    {
+      "id": "A1-auditor-cannot-anchor",
+      "actor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+      "method": "anchor_tender",
+      "return": "CURATOR_ONLY",
+      "tx_hash": "0xf32421249701d6311f10f1626a68ec839cdf261cab06f798c0966f5d3c584bed",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0xf32421249701d6311f10f1626a68ec839cdf261cab06f798c0966f5d3c584bed",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "",
+        "award_source_sha256": "",
+        "case_id": "0",
+        "criteria": [],
+        "last_publication_date": "",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "f78fe5bc-095c-4053-a1de-8c63d1154e15",
+        "revision_count": 0,
+        "status": "SOURCE_REGISTERED",
+        "tender_notice": "616030-2024",
+        "tender_source_sha256": ""
+      }
+    },
+    {
+      "id": "F2-premature-assessment",
+      "actor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+      "method": "assess_award",
+      "return": "AWARD_NOT_ASSESSABLE",
+      "tx_hash": "0xd2ffa3b417cf2ceafa90190315e1af38bbd608a477ca697f52d9b69fc1128cf8",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0xd2ffa3b417cf2ceafa90190315e1af38bbd608a477ca697f52d9b69fc1128cf8",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "",
+        "award_source_sha256": "",
+        "case_id": "0",
+        "criteria": [],
+        "last_publication_date": "",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "f78fe5bc-095c-4053-a1de-8c63d1154e15",
+        "revision_count": 0,
+        "status": "SOURCE_REGISTERED",
+        "tender_notice": "616030-2024",
+        "tender_source_sha256": ""
+      }
+    },
+    {
+      "id": "H2-anchor-tender",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "anchor_tender",
+      "return": "TENDER_ANCHORED",
+      "tx_hash": "0xd5e0be80e47178cef6a00dc399d06afadb1dedf7aa3ba7b78c787bdfdaeaa895",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0xd5e0be80e47178cef6a00dc399d06afadb1dedf7aa3ba7b78c787bdfdaeaa895",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "",
+        "award_source_sha256": "",
+        "case_id": "0",
+        "criteria": [
+          {
+            "criterion_id": "C1",
+            "fingerprint": "a1a200bafb49",
+            "source_pointer": "award-criterion-name-lot/0",
+            "text": "Preis",
+            "type": "PRICE",
+            "weight": "per-exa"
+          },
+          {
+            "criterion_id": "C2",
+            "fingerprint": "1b6ea7b0eefe",
+            "source_pointer": "award-criterion-name-lot/1",
+            "text": "Leistungsbewertung gem\u00e4\u00df Kriterienkatalog - https://bieterzugang.deutsche-evergabe.de/evergabe.bieter/api/external/subproject/ed0db2a7-d545-4fba-87e4-635ec5a81da1/awardcriteria",
+            "type": "QUALITY",
+            "weight": "per-exa"
+          }
+        ],
+        "last_publication_date": "2024-10-11",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "f78fe5bc-095c-4053-a1de-8c63d1154e15",
+        "revision_count": 0,
+        "status": "TENDER_ANCHORED",
+        "tender_notice": "616030-2024",
+        "tender_source_sha256": "e75e660efeadf113889516cf3c84aba614b11174b98a4beb2c595fade4356547"
+      }
+    },
+    {
+      "id": "F3-reuse-tender-as-award",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "bind_award",
+      "return": "INVALID_AWARD_NOTICE",
+      "tx_hash": "0x228a0b2a491d14b27f3629f24f888564d874fcce58bd73ab2bf3213ac02db7c0",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0x228a0b2a491d14b27f3629f24f888564d874fcce58bd73ab2bf3213ac02db7c0",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "",
+        "award_source_sha256": "",
+        "case_id": "0",
+        "criteria": [
+          {
+            "criterion_id": "C1",
+            "fingerprint": "a1a200bafb49",
+            "source_pointer": "award-criterion-name-lot/0",
+            "text": "Preis",
+            "type": "PRICE",
+            "weight": "per-exa"
+          },
+          {
+            "criterion_id": "C2",
+            "fingerprint": "1b6ea7b0eefe",
+            "source_pointer": "award-criterion-name-lot/1",
+            "text": "Leistungsbewertung gem\u00e4\u00df Kriterienkatalog - https://bieterzugang.deutsche-evergabe.de/evergabe.bieter/api/external/subproject/ed0db2a7-d545-4fba-87e4-635ec5a81da1/awardcriteria",
+            "type": "QUALITY",
+            "weight": "per-exa"
+          }
+        ],
+        "last_publication_date": "2024-10-11",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "f78fe5bc-095c-4053-a1de-8c63d1154e15",
+        "revision_count": 0,
+        "status": "TENDER_ANCHORED",
+        "tender_notice": "616030-2024",
+        "tender_source_sha256": "e75e660efeadf113889516cf3c84aba614b11174b98a4beb2c595fade4356547"
+      }
+    },
+    {
+      "id": "H3-bind-award",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "bind_award",
+      "return": "AWARD_BOUND",
+      "tx_hash": "0xbb386316eb69a4f1a658aa10ef019488909eec6bcf8c803cc932074e01709a7f",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0xbb386316eb69a4f1a658aa10ef019488909eec6bcf8c803cc932074e01709a7f",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "4-2025",
+        "award_source_sha256": "",
+        "case_id": "0",
+        "criteria": [
+          {
+            "criterion_id": "C1",
+            "fingerprint": "a1a200bafb49",
+            "source_pointer": "award-criterion-name-lot/0",
+            "text": "Preis",
+            "type": "PRICE",
+            "weight": "per-exa"
+          },
+          {
+            "criterion_id": "C2",
+            "fingerprint": "1b6ea7b0eefe",
+            "source_pointer": "award-criterion-name-lot/1",
+            "text": "Leistungsbewertung gem\u00e4\u00df Kriterienkatalog - https://bieterzugang.deutsche-evergabe.de/evergabe.bieter/api/external/subproject/ed0db2a7-d545-4fba-87e4-635ec5a81da1/awardcriteria",
+            "type": "QUALITY",
+            "weight": "per-exa"
+          }
+        ],
+        "last_publication_date": "2024-10-11",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "f78fe5bc-095c-4053-a1de-8c63d1154e15",
+        "revision_count": 0,
+        "status": "AWARD_BOUND",
+        "tender_notice": "616030-2024",
+        "tender_source_sha256": "e75e660efeadf113889516cf3c84aba614b11174b98a4beb2c595fade4356547"
+      }
+    },
+    {
+      "id": "A2-curator-cannot-assess",
+      "actor": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+      "method": "assess_award",
+      "return": "AUDITOR_ONLY",
+      "tx_hash": "0xac92179853666deb398ffc30fec4e6e77dc72b7c7215678426a137937292607c",
+      "explorer": "https://explorer-studio.genlayer.com/tx/0xac92179853666deb398ffc30fec4e6e77dc72b7c7215678426a137937292607c",
+      "state_after": {
+        "auditor": "0xA63DE24e30C88FB1019E8956654730316e36eDBE",
+        "award_notice": "4-2025",
+        "award_source_sha256": "",
+        "case_id": "0",
+        "criteria": [
+          {
+            "criterion_id": "C1",
+            "fingerprint": "a1a200bafb49",
+            "source_pointer": "award-criterion-name-lot/0",
+            "text": "Preis",
+            "type": "PRICE",
+            "weight": "per-exa"
+          },
+          {
+            "criterion_id": "C2",
+            "fingerprint": "1b6ea7b0eefe",
+            "source_pointer": "award-criterion-name-lot/1",
+            "text": "Leistungsbewertung gem\u00e4\u00df Kriterienkatalog - https://bieterzugang.deutsche-evergabe.de/evergabe.bieter/api/external/subproject/ed0db2a7-d545-4fba-87e4-635ec5a81da1/awardcriteria",
+            "type": "QUALITY",
+            "weight": "per-exa"
+          }
+        ],
+        "last_publication_date": "2024-10-11",
+        "owner": "0x736A168247e3f0C52F7907c9a8fDac572DF9c8bB",
+        "procedure_id": "f78fe5bc-095c-4053-a1de-8c63d1154e15",
+        "revision_count": 0,
+        "status": "AWARD_BOUND",
+        "tender_notice": "616030-2024",
+        "tender_source_sha256": "e75e660efeadf113889516cf3c84aba614b11174b98a4beb2c595fade4356547"
+      }
+    }
+  ],
+  "complete": false
+}

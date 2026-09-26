@@ -37,6 +37,6 @@ npm run lint
 npm run build
 ```
 
-Current local result: 12 Python tests pass and frontend lint passes. The v4 contract still requires a fresh StudioNet deployment before the UI can be published with an active address. The previous v3 address is intentionally not embedded because its architecture is obsolete.
+Current local result: 12 Python tests pass and frontend lint passes. Deployment `0x67Cf91014e41e0862C5d1968135C58c4AFe64C72` proved TED retrieval, criteria extraction, chronology and two-wallet authorization, but its first independent AI assessment failed consensus because validators compared independently generated text byte-for-byte. The validator now audits the leader trace structurally and semantically instead. This corrected source requires a fresh StudioNet deployment; the superseded address is intentionally not embedded.
 
 AwardTrace reports what the published notices evidence. It does not claim legality, fairness, value for money, or absence of corruption.
