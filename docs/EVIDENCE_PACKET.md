@@ -1,5 +1,7 @@
 # Evidence packet
 
+> Archived v3 evidence. The active architecture is TED eForms v4. Do not submit the v3 deployment or Contracts Finder journals as current happy-path evidence.
+
 This file distinguishes completed StudioNet evidence from claims the current public source cannot support.
 
 ## Verified now

@@ -1,5 +1,7 @@
 # Verification guide
 
+> Archived v3 steps. For v4 use `create_case` -> `anchor_tender` -> `bind_award` by the curator, then `assess_award` by the assigned auditor.
+
 ## Contract review
 
 Deploy the exact bytes of `contracts/AwardTrace.py`. Record the deployed address, deployment transaction, source commit, and SHA-256 of the source file. A different deployed source is not evidence for this repository.

@@ -1,25 +1,14 @@
-# Test resource manifest
+# TED eForms live resource manifest
 
-## Official observed resource
+| Field | Tender | Award |
+|---|---|---|
+| Authority | EU Publications Office / TED | EU Publications Office / TED |
+| Publication number | `616030-2024` | `4-2025` |
+| Notice type | `cn-standard` | `can-standard` |
+| Publication date | `2024-10-11` | `2025-01-02` |
+| Procedure ID | `f78fe5bc-095c-4053-a1de-8c63d1154e15` | same |
+| Official page | https://ted.europa.eu/en/notice/-/detail/616030-2024 | https://ted.europa.eu/en/notice/-/detail/4-2025 |
 
-| Field | Value |
-|---|---|
-| Authority | UK Cabinet Office — Contracts Finder |
-| Transport | OCDS single-release JSON endpoint |
-| OCID | `ocds-b5fd17-9b2e0c20-6781-471b-8b29-c2d639187ed0` |
-| Release GUID | `a55ff105-de10-4260-b843-e16e40642436` |
-| Derived URL | `https://www.contractsfinder.service.gov.uk/Published/Notice/releases/a55ff105-de10-4260-b843-e16e40642436.json` |
-| Observed HTTP status | `200` |
-| Observed content type | `application/json` |
-| Observed raw length | `8491` bytes |
-| Observed SHA-256 | `88049adca6e69542352867906d1b234cf3f698e36121db02e20892cecf2f278a` |
-| Observation date | `2026-09-25` |
-| OCDS release tag | `award` |
+The tender and award expose actual eForms award-criterion names, descriptions and types. The award also exposes winner and decision-date fields. The contract retrieves each record through anonymous `POST https://api.ted.europa.eu/v3/notices/search`, using a deterministic publication-number query and a fixed field allowlist. It requires exactly one result, the expected procedure ID, the expected phase and increasing publication dates. Validators repeat the same fetch; the raw response SHA-256 is retained as audit metadata.
 
-This is a point-in-time observation, not an assertion that the endpoint is immutable. The contract re-fetches the derived URL and requires exact raw-byte digest and OCID agreement before positive mutation. If the authority changes the representation, the old digest fails closed.
-
-This sample is suitable only for demonstrating official-source binding and negative fail-closed behavior. A fresh inspection found no published `tender.awardCriteriaDetails`, no evaluation-criteria document carrying actual scoring criteria, and no substantive award `description` or `rationale`. Therefore v3 must return `CRITERIA_NOT_PUBLISHED` or `RATIONALE_NOT_PUBLISHED`; it must not manufacture criteria from scope/classification fields or claim a positive trace. A valid resubmission needs distinct tender, award, and (for correction evidence) correction releases for one OCID, with published criteria/rationale passages, chronological timestamps, and recorded raw digests.
-
-## Fixture classification
-
-The in-memory objects in `tests/test_contract_direct.py` are synthetic fixtures for state-machine and parser tests. They are explicitly not live-world ground truth and are not submission evidence for source availability or semantic correctness.
+Local fixtures test parsers and adversarial cases only. They are never accepted as live ground truth.
