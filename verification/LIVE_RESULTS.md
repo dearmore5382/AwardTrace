@@ -1,6 +1,8 @@
 # AwardTrace live StudioNet E2E results
 
-> **Superseded evidence:** these transactions belong to the prior contract schema. They remain published for audit history, but they do not satisfy the reviewer request for distinct tender/award/correction releases, actual published evaluation criteria, or cited award-rationale passages. Do not submit them as v3 evidence.
+> **v5 deployment gate (current):** the reviewer-compliant three-release source is ready but has not yet been deployed by the primary wallet. Required source: `contracts/AwardTrace.py`, 19,482 bytes, SHA-256 `cc741bdc839a661599e418286ba6555175fad415392427c22c77534d95e29323`. Do not submit the older journals below as proof of the v5 correction lifecycle.
+
+> **Superseded evidence:** these transactions belong to prior contract schemas. They remain published for audit history, but they do not satisfy the reviewer request for distinct tender/award/correction releases, actual published evaluation criteria, or cited award-rationale passages. Do not submit them as v5 evidence.
 
 ## Current v3 negative-source evidence
 

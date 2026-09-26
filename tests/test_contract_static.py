@@ -33,6 +33,9 @@ def test_consensus_and_bounded_ai_output():
     assert "gl.eq_principle.prompt_comparative(evaluate, principle)" in SOURCE
     assert "def _parse_relations" in SOURCE
     assert "UNCITED_CONSEQUENTIAL_RELATION" in SOURCE
+    assert 'fields = ("award-criterion-order-justification-lot"' in SOURCE
+    assert '"modification-description"' in SOURCE
+    assert '"winner-name", "winner-decision-date"' not in SOURCE.split("def _passages", 1)[1].split("def _phase", 1)[0]
     assert "def _derive" in SOURCE
     assert "json.loads(proposal.calldata) == json.loads(evaluate())" not in SOURCE
 

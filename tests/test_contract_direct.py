@@ -45,8 +45,9 @@ def criteria():
 
 
 def trace(relation="ADDRESSED"):
-    return [{"criterion_id":"C1", "relation":relation, "award_reference":"winner-name/0",
-             "award_excerpt":"Hanack und Partner"}]
+    return [{"criterion_id":"C1", "relation":relation,
+             "award_reference":"award-criterion-order-justification-lot/0",
+             "award_excerpt":"Lowest price is the sole criterion because requirements are fixed."}]
 
 
 def test_parser_extracts_real_eforms_fields_and_phases():
@@ -69,6 +70,17 @@ def test_relation_parser_and_summary_are_fail_closed():
     assert module["_derive"](trace("CONTRADICTED")) == "PUBLISHED_CONFLICT"
 
 
+def test_only_rationale_and_modification_fields_can_be_cited():
+    module = deploy()[1]._instance.create_case.__globals__
+    notice = {"award-criterion-name-lot":{"eng":["Price"]}, "winner-name":["Supplier"],
+              "award-criterion-order-justification-lot":{"eng":["Lowest price is justified by fixed specifications."]},
+              "modification-description":{"eng":["Unit prices were amended."]}}
+    award = module["_passages"](notice, "AWARD")
+    correction = module["_passages"](notice, "CORRECTION")
+    assert [item["pointer"] for item in award] == ["award-criterion-order-justification-lot/0"]
+    assert [item["pointer"] for item in correction] == ["modification-description/0"]
+
+
 def test_two_wallet_happy_path_and_authorization():
     vm, contract, owner, auditor, outsider = deploy()
     with vm.activate():
@@ -86,7 +98,7 @@ def test_two_wallet_happy_path_and_authorization():
     with vm.activate():
         sync(vm, contract)
         contract._instance._assessment_consensus = lambda *_: {"source_status":"VERIFIED",
-            "raw_sha256":"b"*64, "publication_date":"2025-01-02", "trace":trace()}
+            "raw_sha256":"b"*64, "publication_date":"2025-01-02", "criteria":criteria(), "trace":trace()}
         assert contract.assess_award("0") == "FULLY_TRACED"
     record = json.loads(contract.get_case("0"))
     assert record["status"] == "TRACE_OPEN"
@@ -111,3 +123,41 @@ def test_role_reuse_and_chronology_guards():
             "raw_sha256":"b"*64, "publication_date":"2024-01-01", "trace":trace()}
         assert contract.assess_award("0") == "NON_CHRONOLOGICAL_NOTICE"
         assert json.loads(contract.get_case("0"))["revision_count"] == 0
+
+
+def test_correction_is_distinct_append_only_revision():
+    vm, contract, owner, auditor, _ = deploy()
+    with vm.activate():
+        sync(vm, contract)
+        assert contract.create_case(PROCEDURE, "470710-2023", address(auditor)) == "0"
+        contract._instance._source_consensus = lambda *_: {"source_status":"VERIFIED", "raw_sha256":"a"*64,
+            "publication_date":"2023-08-02"}
+        assert contract.anchor_tender("0") == "TENDER_ANCHORED"
+        assert contract.bind_award("0", "1424-2024") == "AWARD_BOUND"
+    vm.sender = auditor
+    with vm.activate():
+        sync(vm, contract)
+        contract._instance._assessment_consensus = lambda *_: {"source_status":"VERIFIED",
+            "raw_sha256":"b"*64, "publication_date":"2024-01-02", "criteria":criteria(), "trace":trace()}
+        assert contract.assess_award("0") == "FULLY_TRACED"
+    vm.sender = owner
+    with vm.activate():
+        sync(vm, contract)
+        contract._instance._source_consensus = lambda *_: {"source_status":"VERIFIED", "raw_sha256":"c"*64,
+            "publication_date":"2024-09-09"}
+        assert contract.append_correction("0", "538997-2024") == "CORRECTION_BOUND"
+        record = json.loads(contract.get_case("0"))
+        assert record["award_notice"] == "1424-2024"
+        assert record["correction_notice"] == "538997-2024"
+    vm.sender = auditor
+    with vm.activate():
+        sync(vm, contract)
+        contract._instance._assessment_consensus = lambda *_: {"source_status":"VERIFIED",
+            "raw_sha256":"c"*64, "publication_date":"2024-09-09", "criteria":criteria(),
+            "trace":trace("OMITTED")}
+        assert contract.assess_correction("0") == "GAPS_PRESENT"
+        assert json.loads(contract.get_case("0"))["revision_count"] == 2
+    vm.sender = owner
+    with vm.activate():
+        sync(vm, contract)
+        assert contract.append_correction("0", "538997-2024") == "NOTICE_ROLE_REUSE"
