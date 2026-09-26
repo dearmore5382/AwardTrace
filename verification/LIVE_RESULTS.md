@@ -71,3 +71,14 @@ The live frontend defaults to watch `3`. Its verified production view matches th
 ## Evidence boundary
 
 These transactions prove finalized execution, exact-source integrity rejection, OCID identity rejection, role separation, bounded assessment, revision linkage, final freezing, and UI/readback parity. The selected official endpoint exposes one current award-tagged release, so this evidence does not claim a real prospective pre-award anchor or a semantic conflict between two independent historical official snapshots.
+# TED eForms v4 production matrix
+
+- Contract: `0x3b5eE5e170D54152f526686Ae13531B00d5F41Df`
+- Exact source: `18,576` bytes; SHA-256 `96e3cc7f8489374b83b186767f4daa4aee7bf6528435a6d419346321c597e3ed`
+- Procedure: `f78fe5bc-095c-4053-a1de-8c63d1154e15`
+- Tender: `616030-2024`; award: `4-2025`
+- Final state: case `0` `FROZEN`; revision `0` `FULLY_TRACED`
+- Full 11-step journal: [`v4-ted-0x3b5ee5e170d54152f526686ae13531b00d5f41df.json`](v4-ted-0x3b5ee5e170d54152f526686ae13531b00d5f41df.json)
+- Criteria anchor: https://explorer-studio.genlayer.com/tx/0x16568f8658dcc4f523b1122be25ffc6ca2b7eef49b5a4a4af7b5319cebd35f27
+- Independent assessment: https://explorer-studio.genlayer.com/tx/0x57df5660d00bd66888c6aa8070ce3f825748a34dafff60100ec299c00524a658
+- Freeze: https://explorer-studio.genlayer.com/tx/0x98b53c93620878c0aa1502e80f8545a74929fd625c6e8b8549c32881b38ad42f

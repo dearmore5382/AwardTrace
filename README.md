@@ -37,6 +37,6 @@ npm run lint
 npm run build
 ```
 
-Current local result: 12 Python tests pass and frontend lint passes. Deployments `0x67Cf91014e41e0862C5d1968135C58c4AFe64C72` and `0x74DF02722C2FE31C96999be38c76B6ca2E68d273` proved TED retrieval, criteria extraction, chronology and two-wallet authorization, but their independent assessment validators were too strict for nondeterministic semantic output. Assessment now uses GenLayer's comparative equivalence principle, requiring agreement on every criterion relation and cited official passage while tolerating harmless formatting differences. This corrected source requires a fresh deployment.
+Current production deployment: `0x3b5eE5e170D54152f526686Ae13531B00d5F41Df`. Its deployed source exactly matches the repository (`18,576` bytes, SHA-256 `96e3cc7f8489374b83b186767f4daa4aee7bf6528435a6d419346321c597e3ed`). The finalized 11-step matrix covers valid lifecycle, invalid input, premature assessment, role violations, notice-role reuse, comparative consensus, freeze and mutation rejection after freeze. Case `0` finished `FROZEN`; revision `0` is `FULLY_TRACED`.
 
 AwardTrace reports what the published notices evidence. It does not claim legality, fairness, value for money, or absence of corruption.
